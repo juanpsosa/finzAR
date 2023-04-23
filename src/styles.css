@@ -1,0 +1,13 @@
+:root {
+    --color-fondo: #f4ebda;
+    --color-letras: #444444;
+    --color-bordes: #dadada94;
+    --primary-font: 'PT Sans', sans-serif;
+    --secondary-font: 'Annie Use Your Telescope', cursive;
+    --tertiary-font: 'Roboto Mono', monospace;
+
+  }
+  
+body{
+    background-color: var(--color-fondo)
+}

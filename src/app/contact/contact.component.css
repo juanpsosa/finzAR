@@ -1,0 +1,36 @@
+h4{
+    font-family: var(--primary-font);
+    font-size: 3rem;
+    font-weight: 900;
+    color: var(--color-letras);
+    padding-top: .5em;
+}
+
+.container{
+    font-family: var(--primary-font);
+    padding: 1em;
+    color: var(--color-letras)
+}
+
+.contenedor-imagen{
+    padding: .5em
+}
+
+.imagen{
+    height: 16em;
+    width: 16.8em;
+    border: 1px solid;
+    border-color: var(--color-bordes);
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.contacto{
+    font-weight: bolder;
+    color: #e5885c;
+}
+
+.cualquier{
+    font-weight: bolder;
+    color: #917e14;
+}
+

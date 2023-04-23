@@ -1,0 +1,72 @@
+h4{
+    font-family: var(--primary-font);
+    color: var(--color-letras);
+    padding-top: .5em;
+    font-size:3rem;
+    font-weight: 900;
+}
+a{ text-decoration: none;}
+
+.contenedor{
+    padding: 20px;
+}
+
+.card{
+    border: var(--color-bordes) 1px solid;
+    background-color: white;
+    transition: transform .5s ease-in-out;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;;
+}
+/* Estilos cuando el cursor está sobre el elemento */
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  }
+ 
+.card-title{
+    font-family: var(--primary-font);
+    color: var(--color-letras);
+    font-size: 2.2rem;
+    font-weight: 900;
+}
+
+.card-text{
+    border-top: var(--color-bordes) 2px solid;
+    font-size: .9em;
+    font-family: var(--primary-font);
+}
+
+p{
+    font-family: var(--primary-font);
+    color: var(--color-letras)
+}
+
+.corazon{
+    font-size: .6em;
+}
+
+.badge{
+    background-color: #e5885c;
+}
+
+.visualizar{
+    font-weight: bolder;
+    color: #e5885c;
+}
+
+.interpretar{
+    font-weight: bolder;
+    color: #917e14;
+}
+
+.analizar{
+    font-weight: bolder;
+    color: #0099ff;
+
+}
+
+.ico{
+    height: 25px;
+    width: 25px;
+}
+

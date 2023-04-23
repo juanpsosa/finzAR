@@ -1,0 +1,73 @@
+.skills {
+    color: var(--color-letras);
+}
+
+h4{
+    font-family: var(--primary-font);
+    padding-top: .5em;
+    font-size:3rem;
+    font-weight: 900;
+}
+
+h5{
+    font-family: var(--primary-font);
+    font-size: 1.3rem;
+    font-weight: 900;
+}
+
+h6{
+    font-family: var(--primary-font);
+    font-size: .8rem;
+    font-weight: bolder;
+}
+
+p{
+    font-family: var(--primary-font);
+}
+
+.analista{
+    font-weight: bolder;
+    color: #917e14;
+}
+
+.gestor{
+    font-weight: bolder;
+    color: #917e14;
+}
+
+.data{
+    color: #e5885c;
+}
+
+.name{
+    font-size: 1.5rem;
+    font-family:var(--primary-font)
+}
+
+.im{
+    color: #917e14;
+}
+
+.herramientas{
+    font-size: 1rem;
+    font-weight: bolder;
+    background-color: var(--color-bordes);
+    border-radius: 0.5em;
+}
+.container {
+    padding: 1em;
+}
+.col-6{
+    padding: 10px;
+}
+.iconos{
+    font-size: 3rem
+}
+
+img{
+    height: 3rem;
+}
+
+
+@media (max-width: 767px) {
+}

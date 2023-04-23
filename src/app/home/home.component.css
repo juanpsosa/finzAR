@@ -1,0 +1,28 @@
+.avatar{
+    margin-top: 2em;
+    height: 16em;
+    width: 16em;
+    border: 1px solid;
+    border-color: var(--color-bordes);
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.descripcion{
+    color: var(--color-letras);
+    padding-top: 2em;
+}
+
+h4{
+    font-family: 'PT Sans', sans-serif;
+    font-size: 3rem;
+    font-weight: 900;
+}
+
+h5{
+    font-family: 'Annie Use Your Telescope', cursive;
+    font-size:2rem
+}
+
+h6{
+    font-family: 'PT Sans', sans-serif;
+}
