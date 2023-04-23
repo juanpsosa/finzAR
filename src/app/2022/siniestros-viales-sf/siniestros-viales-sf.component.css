@@ -41,7 +41,7 @@ h4{font-size: 1.2em;
 p{margin-bottom:-1em;}
 i,a{font-size:.8em}
 
-.btn{font-size: .5em;}
+.btn{font-size: .5em; margin-top: 20px;}
 .ico{height: 25px;width: 25px;}
 .fatales, .graves, .leves{font-weight: bolder;}
 .fatales{color:#FF6347}
