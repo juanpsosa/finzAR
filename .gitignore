@@ -2,7 +2,7 @@
 
 # Compiled output
 # /dist
-/.firebase
+.firebase
 /tmp
 /out-tsc
 /bazel-out
