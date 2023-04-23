@@ -1,1 +1,592 @@
-<p>👷‍♀️Estoy trabajando en esta sección... puedes ver mis proyectos en mi perfil de <strong>GitHub.</strong></p>
+<div class="container col-md-6">
+    <div class="row">
+        <div class="titulo col-md-12 text-center">
+            <h1  id="titulo">Análisis de accidentes de tránsito en Santa Fe (AR) desde el año 2012 al 2020</h1>
+            <hr>
+        </div>
+        <div class="col-md-12 publicado">
+            <p class="publicado2">Publicado en <strong>Nov 9, 2022</strong> por <a href="#"><b>JUAN PABLO SOSA</b></a>
+            </p><br>
+            <p>🕒<b>10 MIN</b> de Lectura</p>
+        </div>
+    </div>
+    <!-- CONTEXTO -->
+    <div class="row intro">
+        <div class="col-md-12">
+            <h4>CONTEXTO</h4>
+            <p>Análisis con el objetivo de investigar e indagar más acerca de las <b>características</b> y
+                <b>patrones</b> presentes en los <b>accidentes</b> de tránsito ocurridos en la provincia de Santa Fe,
+                Argentina, durante el período comprendido entre <b>2012</b> y <b>2020</b> con el fin de reducir su
+                ocurrencia.
+            </p><br>
+            <p> Para llevar a cabo este análisis, se clasificarán los accidentes en tres categorías: <span
+                    class="fatales">FATALES</span> (con uno o más fallecidos), <span class="graves">GRAVES</span> (con
+                uno o más heridos graves o gravísimos) y <span class="leves">LEVES</span> (solo con heridos leves e
+                ilesos).</p>
+        </div>
+    </div>
+    <!-- DATOS -->
+    <div class="row intro">
+        <div class="col-md-12">
+            <h4>DATOS</h4>
+            <p><b>Fuente del dataset:</b></p><br>
+            <p><a href="https://datos.santafe.gob.ar/dataset/observatorio-vial">Datos abiertos Santa Fe - Observatorio
+                    vial</a></p><br>
+            <p>El recurso cuenta con 9 archivos .csv derivados de un sistema de carga de hechos viales con lesionados y
+                víctimas fatales.</p><br>
+            <p><b>Otros datos:</b></p><br>
+            <ul>
+                <li><a href="https://datos.santafe.gob.ar/dataset/municipalidades-y-comunas">Municipios y Comunas de la
+                        provincia</a></li>
+                <li><a href="https://datos.santafe.gob.ar/dataset/red-vial">Autopistas, rutas nacionales y
+                        provinciales</a></li>
+            </ul>
+            <p>Datos procedentes de imágenes de satélite SPOT ajustadas al Sistema Geodésico Nacional y a la Base
+                Parcelaria del Servicio de Catastro e Información Territorial. Archivos .geojson.</p><br>
+            <p>Conexión a la <a
+                    href="https://apis.datos.gob.ar/georef/api/departamentos?provincia=sf&formato=shp&max=1000 ">API</a>
+                del Servicio de normalización de datos geográficos de Argentina. (Geometrías de la provincia de Santa Fe
+                y sus departamentos).</p>
+        </div>
+    </div>
+
+    <!-- PREGUNTAS DIRECTRICES -->
+    <div class="row intro">
+        <div class="col-md-12">
+            <h4>PREGUNTAS DIRECTRICES</h4>
+            <ul>
+                <li>¿Cuál es el día y hora de la semana en que se registran más accidentes fatales en la provincia y qué
+                    patrones se pueden identificar en relación a esta situación?</li>
+                <li>¿Qué características diferencian a los accidentes fatales de los graves y leves?</li>
+                <li>¿Cómo se distribuyen geográficamente los accidentes fatales y cuáles son las zonas más críticas en
+                    términos de ocurrencia de incidentes viales?</li>
+                <li>¿Qué recomendaciones podrían implementarse para reducir los incidentes fatales de tránsito, basadas
+                    en las características y patrones identificados en el análisis?</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- RESULTADOS -->
+
+    <div class="row intro">
+        <div class="col-md-12">
+            <h4>RESULTADOS: Patrones y tendencias</h4>
+
+            <!-- FREQ-DIARIA -->
+            <button type="button" class="btn btn-sm btn-dark" data-bs-toggle="modal" data-bs-target="#freqModal">
+                👁
+            </button>
+            <div>
+                <img src="../../../assets/siniestros-viales-sf/freq-rel-diaria.png" alt="" class="img-fluid">
+            </div>
+
+            <!-- Modal FREQ-DIARIA -->
+            <div class="modal fade" id="freqModal" tabindex="-1" aria-labelledby="freqModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-xl">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <img src="../../../assets/siniestros-viales-sf/freq-rel-diaria.png" class="img-fluid"
+                                alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <ul>
+                <li>En cuanto a los accidentes <span class="fatales">FATALES</span>, se observa que:
+                    <ul>
+                        <li>La mayoría de estos accidentes se produjeron los domingos, representando el 20,5% del total.
+                        </li>
+                        <li>En segundo lugar se encuentran los sábados, con un 19,9%.</li>
+                    </ul>
+                </li>
+                <li>Por otro lado, en los accidentes <span class="graves">GRAVES</span> se observa que:
+                    <ul>
+                        <li>Estos accidentes se mantuvieron por debajo de los accidentes LEVES hasta el sábado, donde se
+                            produjo un aumento significativo (17,3%), aunque aún sin superar la cantidad de accidentes
+                            fatales.</li>
+                    </ul>
+                </li>
+                <li>En cuanto a los accidentes <span class="leves">LEVES</span>, se observa que:
+                    <ul>
+                        <li>Mantuvieron una distribución pareja en todos los días de la semana, oscilando entre el 14,2%
+                            y el 15,3%.</li>
+                        <li>La excepción a esta distribución pareja se produjo en el día domingo, donde se registró una
+                            caída al 12% del total de accidentes.</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <!-- PATRONES -->
+
+            <button type="button" class="btn btn-sm btn-dark" data-bs-toggle="modal" data-bs-target="#patronesModal">
+                👁
+            </button>
+            <div>
+                <img src="../../../assets/siniestros-viales-sf/patrones.png" alt="" class="img-fluid">
+            </div>
+
+            <!-- Modal PATRONES -->
+            <div class="modal fade" id="patronesModal" tabindex="-1" aria-labelledby="patronesModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog modal-xl">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <img src="../../../assets/siniestros-viales-sf/patrones.png" class="img-fluid" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <ul>
+                <li>De Lunes a Viernes en horas de la madrugada (00:00 a 06:00) suele ser el período donde menos
+                    accidentes ocurren, tanto como para accidentes <span class="graves">GRAVES</span>, como para <span
+                        class="fatales">FATALES</span>.
+                </li>
+                <li>En el caso de accidentes <span class="graves">GRAVES</span>, la cantidad tiende a 🔺aumentar en
+                    torno a las 07:00, alcanzando sus máximos entre las 17:00 y las 21:00.
+                </li>
+                <li>Observamos patrones diferentes si hablamos del <b>Sábado</b> y el <b>Domingo</b>, ya que los
+                    accidentes tienen aumento en la madrugada más notablemente entre las 05:00 y 09:00.
+                </li>
+                <li>
+                    En cuanto a los accidentes <span class="fatales">FATALES</span> la diferencia es aún más notable si
+                    hablamos del fin de semana, con aumentos desde las 20:00 alcanzando sus máximos en torno a las
+                    06:00. <i>(También podemos observar que los días Lunes en torno a las 05:00 a 08:00, lo cual podría
+                        deberse a los fin de semana largos -lunes feriados-).</i>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- SECTOR DE PRUEBAS -->
+
+    <!-- SECTOR DE PRUEBAS -->
+
+
+    <div class="row intro">
+        <div class="col-md-12">
+            <h4>RESULTADOS: Características y diferencias</h4>
+            <p><i>En esta sección vamos a analizar principalmente las siguientes variables: <b>tipo de vía</b>,
+                    <b>zona</b>, <b>clima</b> y <b>cantidad de participantes</b>.</i></p><br>
+            <p><b><u>Sobre el TIPO de VÍA</u></b></p><br>
+
+            <!-- TIPO DE VIA -->
+            <button type="button" class="btn btn-sm btn-dark" data-bs-toggle="modal" data-bs-target="#tipoViaModal">
+                👁
+            </button>
+            <div>
+                <img src="../../../assets/siniestros-viales-sf/tipo-de-via.png" alt="" class="img-fluid">
+            </div>
+
+            <!-- Modal TIPO DE VIA -->
+            <div class="modal fade" id="tipoViaModal" tabindex="-1" aria-labelledby="tipoViaModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog modal-xl">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <img src="../../../assets/siniestros-viales-sf/tipo-de-via.png" class="img-fluid" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <ul>
+                <li>De acuerdo al gráfico, más del 50% de los accidentes <span class="fatales">FATALES</span> ocurren en
+                    <b>rutas</b>, seguido por un 26% en <b>calles</b>, un 10% en <b>avenidas</b>, un 8.5% en
+                    <b>autopistas</b> y el restante 4% en otros lugares
+                </li>
+                <li>En cuanto a los accidentes <span class="graves">GRAVES</span>, se registró que alrededor del 69% de
+                    ellos ocurrieron en <b>calles</b> y <b>avenidas</b>, seguidos por un 21% en <b>rutas</b> y un 10% en
+                    otros lugares.
+                </li>
+                <li>En el caso de los accidentes <span class="leves">LEVES</span>, la mayoría de ellos (79%) ocurrieron
+                    en calles y avenidas.</li>
+                <p><i>Tal como mencionamos previamente, más del 50% de los accidentes fatales ocurren en rutas. Es de
+                        nuestro interés conocer en qué parte de la vía se producen con mayor frecuencia.</i></p>
+            </ul>
+
+            <!-- LUGAR DE RUTA -->
+            <button type="button" class="btn btn-sm btn-dark" data-bs-toggle="modal" data-bs-target="#lugarDeRutaModal">
+                👁
+            </button>
+            <div>
+                <img src="../../../assets/siniestros-viales-sf/lugar-de-ruta.png" alt="" class="img-fluid">
+            </div>
+
+            <!-- Modal LUGAR DE RUTA -->
+            <div class="modal fade" id="lugarDeRutaModal" tabindex="-1" aria-labelledby="lugarDeRutaModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog modal-xl">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <img src="../../../assets/siniestros-viales-sf/lugar-de-ruta.png" class="img-fluid" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <ul>
+                <li>Se observó que del total de los accidentes <span class="fatales">FATALES</span> en rutas, el 66%
+                    tuvo lugar en tramos de <b>recta</b>, mientras que un 11% se produjo en <b>intersecciones</b> y un
+                    9.3% en <b>curvas</b>.</li>
+            </ul>
+        </div>
+    </div>
+    <p><b><u>Sobre la ZONA</u></b></p><br>
+
+    <!-- ZONA -->
+    <button type="button" class="btn btn-sm btn-dark" data-bs-toggle="modal" data-bs-target="#zonaViaFatModal">
+        👁
+    </button>
+    <div>
+        <img src="../../../assets/siniestros-viales-sf/zona-via (fatales).png" alt="" class="img-fluid">
+    </div>
+
+    <!-- Modal TIPO DE VIA -->
+    <div class="modal fade" id="zonaViaFatModal" tabindex="-1" aria-labelledby="zonaViaFatModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <img src="../../../assets/siniestros-viales-sf/zona-via (fatales).png" class="img-fluid" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+    <ul>
+        <li>Aunque los accidentes <span class="fatales">FATALES</span> son más comunes en zonas urbanas, se observa una
+            proporción significativamente <b>mayor</b> en comparación con zonas rurales.</li>
+        <li>En <b>zonas rurales</b>, la mayoría de los accidentes fatales ocurren en <b>rectas</b> (77%), seguidos por
+            curvas (8.4%).</li>
+        <li>En <b>zonas urbanas</b>, el (48%) de los accidentes fatales tienen lugar en <b>intersecciones</b>, mientras
+            que el (37%) ocurre en rectas.</li>
+    </ul>
+    <p><b><u>Sobre el factor CLIMATOLÓGICO</u></b></p><br>
+
+    <!-- PROP-GRAVEDAD EN CLIMA -->
+    <button type="button" class="btn btn-sm btn-dark" data-bs-toggle="modal" data-bs-target="#propGravClimaModal">
+        👁
+    </button>
+    <div>
+        <img src="../../../assets/siniestros-viales-sf/prop-gravedad-clima.png" alt="" class="img-fluid">
+    </div>
+
+    <!-- Modal PROP-GRAVEDAD EN CLIMA -->
+    <div class="modal fade" id="propGravClimaModal" tabindex="-1" aria-labelledby="propGravClimaModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <img src="../../../assets/siniestros-viales-sf/prop-gravedad-clima.png" class="img-fluid" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+    <ul>
+        <li>En general, para la proporcion de gravedad por cada tipo de accidente, el clima <b>escarcha</b> tiene la
+            tasa más alta de accidentes <span class="fatales">FATALES</span>, representando el 33,3% de ellos. En
+            segundo lugar se encuentra la <b>niebla</b> con el 23%, seguida del <b>viento fuerte</b> con el 10,4%, y
+            finalmente, la <b>lluvia</b> con el 9,3%.</li>
+    </ul>
+    <!-- PROP-GRAVEDAD en CLIMA RECATEGORIZADA -->
+    <button type="button" class="btn btn-sm btn-dark" data-bs-toggle="modal" data-bs-target="#propGravClimaRECATModal">
+        👁
+    </button>
+    <div>
+        <img src="../../../assets/siniestros-viales-sf/prop-gravedad-clima RECAT.png" alt="" class="img-fluid">
+    </div>
+
+    <!-- Modal PROP-GRAVEDAD en CLIMA RECATEGORIZADA -->
+    <div class="modal fade" id="propGravClimaRECATModal" tabindex="-1" aria-labelledby="propGravClimaRECATModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <img src="../../../assets/siniestros-viales-sf/prop-gravedad-clima RECAT.png" class="img-fluid"
+                        alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+    <ul>
+        <li>Si recategorizamos los datos en "Buen tiempo" y "Mal tiempo" (que incluye la lluvia, niebla, granizo,
+            escarcha y viento fuerte), podemos observar que la proporción de accidentes <span
+                class="fatales">FATALES</span> es <b>mayor</b> en el mal tiempo que en el buen tiempo.</li>
+    </ul>
+    <!-- PROP CLIMA-GRAVEDAD--->
+    <button type="button" class="btn btn-sm btn-dark" data-bs-toggle="modal" data-bs-target="#propClimaGravModal">
+        👁
+    </button>
+    <div>
+        <img src="../../../assets/siniestros-viales-sf/prop-clima-gravedad.png" alt="" class="img-fluid">
+    </div>
+
+    <!-- Modal PROP CLIMA-GRAVEDAD -->
+    <div class="modal fade" id="propClimaGravModal" tabindex="-1" aria-labelledby="propClimaGravModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <img src="../../../assets/siniestros-viales-sf/prop-clima-gravedad.png" class="img-fluid" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+    <ul>
+        <li>Para la proporción de los factores climatológicos en cada tipo de accidente, si filtramos los datos quitando
+            las categorías como "S/D" (sin datos), "Otro" y "Buen tiempo", podemos ver que la <b>niebla</b> tiene la
+            proporción más alta de accidentes <span class="fatales">FATALES</span>, seguida por la <b>lluvia</b> y
+            <b>viento</b> fuerte.
+            <ul>
+                <li><i>Es importante tener en cuenta que esta es una generalización basada en los datos disponibles
+                        después del filtrado, y que puede haber otros factores que influyan en la seguridad vial en
+                        diferentes condiciones climáticas.</i></li>
+            </ul>
+        </li>
+    </ul>
+    <p><b><u>Sobre la cantidad de PARTICIPANTES</u></b></p><br>
+    <ul>
+        <li>Promedio de participantes en accidentes fatales: 1.79 +/- 0.64</li>
+        <li>Promedio de participantes en accidentes graves: 1.85 +/- 0.48</li>
+        <li>Promedio de participantes en accidentes leves: 1.89 +/- 0.39</li>
+    </ul>
+    <ul>
+        <li>El valor t de Student es -5.1638494107
+        </li>
+        <li>El valor p es 0.0000002505</li>
+    </ul>
+    <p>En este caso, el valor p es mucho menor a 0.05, por lo que se puede afirmar que hay una diferencia significativa
+        entre la cantidad de participantes de accidentes fatales y las demás categorías.</p><br>
+    <!-- DESCRIBE CANTIDAD DE PARTICIPANTES -->
+    <button type="button" class="btn btn-sm btn-dark" data-bs-toggle="modal" data-bs-target="#describeCantPartModal">
+        👁
+    </button>
+    <div>
+        <img src="../../../assets/siniestros-viales-sf/describe-accidentes-cant_participatnes.png" alt=""
+            class="img-fluid">
+    </div>
+
+    <!-- Modal DESCRIBE CANTIDAD DE PARTICIPANTES -->
+    <div class="modal fade" id="describeCantPartModal" tabindex="-1" aria-labelledby="describeCantPartModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <img src="../../../assets/siniestros-viales-sf/describe-accidentes-cant_participatnes.png"
+                        class="img-fluid" alt="">
+                </div>
+            </div>
+        </div>
+    </div><br>
+
+    <p>Por otro lado, los percentiles muestran que en la mayoría de los accidentes, tanto fatales, graves y leves, hay 2
+        o menos participantes involucrados. Sin embargo, también hay algunos casos extremos en los que el número de
+        participantes es significativamente mayor, especialmente en los accidentes graves y leves, donde se registran un
+        máximo de 14 participantes.</p><br>
+
+    <!-- CANTIDAD DE PARTICIPANTES -->
+    <button type="button" class="btn btn-sm btn-dark" data-bs-toggle="modal" data-bs-target="#participantesModal">
+        👁
+    </button>
+    <div>
+        <img src="../../../assets/siniestros-viales-sf/participantes.png" alt="" class="img-fluid">
+    </div>
+
+    <!-- Modal CANTIDAD DE PARTICIPANTES -->
+    <div class="modal fade" id="participantesModal" tabindex="-1" aria-labelledby="participantesModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <img src="../../../assets/siniestros-viales-sf/participantes.png" class="img-fluid" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+    <ul>
+        <li>El intervalo de confianza de los accidentes <span class="fatales">FATALES</span> se encuentra entre (1.76 y
+            1.80.) esto sugiere que el podemos estar 95% seguros que el verdadero promedio se encuentra entre estos
+            valores.</li>
+    </ul>
+
+    <!-- PROM CANTIDAD DE PARTICIPANTES POR DÍA -->
+    <button type="button" class="btn btn-sm btn-dark" data-bs-toggle="modal" data-bs-target="#promCantPartDiarioModal">
+        👁
+    </button>
+    <div>
+        <img src="../../../assets/siniestros-viales-sf/prom-cant_participantes-dia.png" alt="" class="img-fluid">
+    </div>
+
+    <!-- Modal PROM CANTIDAD DE PARTICIPANTES POR DÍA -->
+    <div class="modal fade" id="promCantPartDiarioModal" tabindex="-1" aria-labelledby="promCantPartDiarioModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <img src="../../../assets/siniestros-viales-sf/prom-cant_participantes-dia.png" class="img-fluid"
+                        alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+    <ul>
+        <li>Existe una mayor concentración de accidentes <span class="fatales">FATALES</span> con una <b>menor</b>
+            cantidad de participantes los días <b>viernes</b>, <b>sabado</b> y <b>domingo</b> en comparación con los
+            accidentes graves y leves.
+            <ul>
+                <li><i>Esto puede deberse a que durante los fines de semana hay un aumento en la cantidad de conductores
+                        imprudentes o bajo la influencia del alcohol, lo que aumenta el riesgo de accidentes fatales con
+                        menos pasajeros en el vehículo.</i></li>
+            </ul>
+        </li>
+    </ul>
+
+    <!-- RESULTADOS GEOGRAFICOS -->
+
+
+    <div class="row intro">
+        <div class="col-md-12">
+            <h4>RESULTADOS: Distribución geográfica y zonas críticas</h4>
+            <p><i>Se debe mencionar que de un total de 108098 registros, 72162 (aproximadamente el 66,7%) no cuentan con
+                    una posición geográfica registrada. Es importante tener en cuenta que estos datos sin ubicación no
+                    pueden ser incluidos en el análisis espacial.</i></p><br>
+            <!-- RED VIAL -->
+            <button type="button" class="btn btn-sm btn-dark" data-bs-toggle="modal"
+                data-bs-target="#redVialFatalesModal">
+                👁
+            </button>
+            <div>
+                <img src="../../../assets/siniestros-viales-sf/accidentes fatales y red vial.png" alt=""
+                    class="img-fluid">
+            </div>
+
+            <!-- Modal RED VIAL -->
+            <div class="modal fade" id="redVialFatalesModal" tabindex="-1" aria-labelledby="redVialFatalesModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog modal-xl">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <img src="../../../assets/siniestros-viales-sf/accidentes fatales y red vial.png"
+                                class="img-fluid" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <ul>
+                <li>Se puede observar que existen concentraciones significativas de
+                    puntos rojos (accidentes <span class="fatales">FATALES</span>) en los accesos a ciudades importantes
+                    como Santa Fe, Rosario, Rafaela y Reconquista.</li>
+            </ul>
+            <!-- TIPO MAPA DE CALOR -->
+            <button type="button" class="btn btn-sm btn-dark" data-bs-toggle="modal" data-bs-target="#mapaDeCalorModal">
+                👁
+            </button>
+            <div>
+                <img src="../../../assets/siniestros-viales-sf/mapa-de-calor.png" alt="" class="img-fluid">
+            </div>
+
+            <!-- Modal MAPA DE CALOR -->
+            <div class="modal fade" id="mapaDeCalorModal" tabindex="-1" aria-labelledby="mapaDeCalorModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog modal-xl">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <img src="../../../assets/siniestros-viales-sf/mapa-de-calor.png" class="img-fluid" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <ul>
+                <li>El mapa de calor confirma las observaciones previas al permitirnos identificar claramente las áreas
+                    de mayor frecuencia de accidentes <span class="fatales">FATALES</span> en la provincia. Se puede
+                    observar una alta concentración de estos eventos en zonas urbanas importantes, en particular en las
+                    ciudades de Santa Fe y Rosario, y en menor medida en Rafaela. Además, el mapa muestra una
+                    distribución geográfica de los puntos rojos que se extiende desde el norte hasta el sur, llegando a
+                    otro punto caliente en la ciudad de Reconquista.</li>
+            </ul>
+
+            <!-- CONCLUSIONES FINALES -->
+            <div class="row intro">
+                <div class="col-md-12">
+                    <h4 class="text-center">Recomendaciones finales</h4>
+                    <p><i>En cuanto a las recomendaciones para reducir los incidentes fatales de tránsito, basadas en las características y patrones identificados en el análisis, se pueden considerar varias medidas:</i></p><br>
+                    <ul>
+                        <li>
+                            Dado que la mayoría de los accidentes fatales ocurren el findesemana, puede ser favorable el lanzamiento de <b>campañas de concientización</b> para los conductores durante estos días, informando medidas preventivas como el consumo de alcohol y otras sustancias.
+                        </li>
+                        <li>
+                            En referencia a los horarios más críticos, se podría sacar provecho a más <b>controles y despliegues de patrullas</b> en los horarios críticos (05:00 - 08:00). Y más regulación del tránsito en las horas de la tarde-noche.
+                        </li>
+                        <li>
+                            Se podría mejorar la <b>seguridad en las rutas</b> <i>(las cuales representan el 50% de los accidentes fatales)</i> mediante la implementación de <b>equipamiento y materiales impermeables</b>, así como una <b>señalización más clara y precisa</b>, especialmente en las curvas y rectas, teniendo en cuenta las variables climatológicas como la lluvia y la niebla.
+                        </li>
+                        <li>
+                            En <b>zonas rurales</b>, es importante dotar las rectas de infraestructura adecuada, como <b>iluminación</b>, <b>líneas divisorias </b>claramente marcadas y <b>señalización visible</b>.
+                        </li>
+                        <li>Mejorar el sistema de carga de datos en accidentes de tránsito, se sugiere tomar en cuenta dos aspectos: <ul>
+                            <li>En primer lugar <b>incluir</b> datos relevantes como la velocidad, uso del cinturón o casco, influencia de alcohol o drogas, entre otros. Además, se recomienda considerar la edad, género, etnia y otras características demográficas para obtener un análisis más completo y preciso de los accidentes.</li>
+                            <li>
+                                En segundo lugar, es recomendable <b>capacitar</b> a las personas encargadas de cargar los datos para evitar errores y datos faltantes. Una capacitación adecuada puede ayudar a mejorar la calidad de los datos y, por lo tanto, mejorar la precisión de los análisis y estadísticas relacionadas con los accidentes de tráfico.
+                            </li>
+                        </ul></li>
+                    </ul>
+                </div>
+            </div>
+            <hr>
+            <div class="row intro justify-content-center align-items-center">
+                <div class="col-md-10 col-lg-8 text-center">
+                    <h4>¡Gracias por llegar hasta aquí y leer este artículo!</h4>
+                    <p>Esperamos que haya sido útil y que haya proporcionado información valiosa sobre la importancia del análisis de datos en accidentes de tráfico.</p><br>
+                    <p>Si querés explorar más a fondo el análisis, podes visitar el <a href="https://github.com/juanpsosa/siniestros-viales-sf/">repo de GitHub <img class="ico" src="https://img.icons8.com/fluency-systems-filled/50/000000/github.png" /></a></p><br></div>
+                    <button class="btn btn-success btn-sm col-3"(click)="scrollToTop()"><i class=""></i>Ir al principio</button>
+
+
+            </div><br><br>
+
+            
+
+
+            <!-- AVISO -->
+
+            <!-- <p class="aviso">👷 Aún trabajando en esta sección... puedes visitar la investigación completa en el <a href="https://github.com/juanpsosa/siniestros-viales-sf/blob/main/Siniestros%20Viales%20(Santa%20Fe%2C%20AR).ipynb">repo de GitHub.</a></p><br> -->
