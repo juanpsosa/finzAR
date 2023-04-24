@@ -1,11 +1,3 @@
-h4{
-    font-family: var(--primary-font);
-    font-size: 3rem;
-    font-weight: 900;
-    color: var(--color-letras);
-    padding-top: .5em;
-}
-
 .container{
     font-family: var(--primary-font);
     padding: 1em;
