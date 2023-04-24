@@ -7,8 +7,8 @@ h4{
 }
 a{ text-decoration: none;}
 
-.contenedor{
-    padding: 20px;
+.container{
+    padding: 10px;
 }
 
 .card{
@@ -46,6 +46,10 @@ p{
 }
 
 .badge{
+    margin:1px;
+}
+
+.badge-primary{
     background-color: #e5885c;
 }
 
