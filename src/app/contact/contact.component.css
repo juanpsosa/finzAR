@@ -1,28 +1,27 @@
-.container{
-    font-family: var(--primary-font);
-    padding: 1em;
-    color: var(--color-letras)
+.container {
+  font-family: var(--primary-font);
+  padding: 1em;
+  color: var(--color-letras);
 }
 
-.contenedor-imagen{
-    padding: .5em
+.contenedor-imagen {
+  padding: 0.5em;
 }
 
-.imagen{
-    height: 16em;
-    width: 16.8em;
-    border: 1px solid;
-    border-color: var(--color-bordes);
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+.imagen {
+  height: 16em;
+  width: 16.8em;
+  border: 1px solid;
+  border-color: var(--color-bordes);
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
-.contacto{
-    font-weight: bolder;
-    color: #e5885c;
+.contacto {
+  font-weight: bolder;
+  color: #e5885c;
 }
 
-.cualquier{
-    font-weight: bolder;
-    color: #917e14;
+.cualquier {
+  font-weight: bolder;
+  color: #917e14;
 }
-
