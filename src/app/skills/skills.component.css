@@ -1,69 +1,87 @@
-h2{
-    color: var(--color-letras);
-    font-weight: 900;
+h2 {
+  color: var(--color-letras);
+  font-weight: 900;
 }
 
-h3{
-    color: var(--color-letras);
-    font-family: var(--primary-font);
-    font-size: 1.2rem;
-    font-weight: bolder;
+h3 {
+  color: var(--color-letras);
+  font-family: var(--primary-font);
+  font-size: 1.2rem;
+  font-weight: bolder;
 }
 
-h6{
-    color: var(--color-letras);
-    font-family: var(--primary-font);
-    font-size: .8rem;
-    font-weight: bolder;
+h6 {
+  color: var(--color-letras);
+  font-family: var(--primary-font);
+  font-size: 0.8rem;
+  font-weight: bolder;
 }
 
-p{
-    font-family: var(--primary-font);
+p {
+  font-family: var(--primary-font);
 }
 
-.analista{
-    font-weight: bolder;
-    color: #917e14;
+.analista {
+  font-weight: bolder;
+  color: #917e14;
 }
 
-.gestor{
-    font-weight: bolder;
-    color: #917e14;
+.gestor {
+  font-weight: bolder;
+  color: #917e14;
 }
 
-.data{
-    color: #e5885c;
+.data {
+  color: #e5885c;
 }
 
-.name{
-    font-size: 1.5rem;
-    font-family:var(--primary-font)
+.name {
+  font-size: 1.5rem;
+  font-family: var(--primary-font);
 }
 
-.im{
-    color: #917e14;
+.im {
+  color: #917e14;
 }
 
-.herramientas{
-    font-size: 1rem;
-    font-weight: bolder;
-    background-color: var(--color-bordes);
-    border-radius: 0.5em;
+.herramientas {
+  font-size: 1rem;
+  font-weight: bolder;
+  background-color: var(--color-bordes);
+  border-radius: 0.5em;
 }
 .container {
-    padding: 1em;
+  padding: 1em;
 }
-.col-6{
-    padding: 10px;
+.col-6 {
+  padding: 10px;
 }
-.iconos{
-    font-size: 3rem
-}
-
-img{
-    height: 3rem;
+.iconos {
+  font-size: 3rem;
+  cursor: pointer;
 }
 
+img {
+  height: 3rem;
+}
 
-@media (max-width: 767px) {
+.datacamplogo {
+  height: auto;
+  width: 25%;
+}
+
+ul {
+  text-align: initial;
+}
+.modal {
+  font-family: var(--primary-font);
+}
+li {
+  margin: 15px;
+}
+li a {
+  float: right;
+}
+.cert-final {
+  font-size: 1.2em;
 }
