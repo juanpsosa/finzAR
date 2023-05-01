@@ -1,20 +1,23 @@
-<div class="container col-md-6">
+<div class="container col-md-8">
   <header>
     <div class="row">
       <div class="titulo col-md-12 text-center">
-        <h1 id="titulo">
-          Análisis riesgo - beneficio de las principales acciones tecnológicas
-          utilizando Sharpe Ratio
+        <h1 _ngcontent-mnl-c8="" id="titulo" style="font-size: 1.4em">
+          Gigantes tecnológicos en tiempos de COVID-19<br /><span
+            style="font-size: 0.6em"
+            >¿Fue un buen negocio o un riesgo excesivo?</span
+          >
         </h1>
+        <i>#SharpeRatio</i>
         <hr />
       </div>
       <div class="col-md-12 publicado">
         <p class="publicado2">
-          Publicado en <strong>Nov 26, 2023</strong> por
+          Publicado en <strong>Apr 26, 2023</strong> por
           <a href="#"><b>JUAN PABLO SOSA</b></a>
         </p>
         <br />
-        <p>🕒<b>xx MIN</b> de Lectura</p>
+        <p>🕒<b>8 MIN</b> de Lectura</p>
       </div>
     </div>
   </header>
@@ -22,15 +25,907 @@
   <section>
     <div class="row intro">
       <div class="col-md-12">
-        <h4>Sección en construcción 🔨</h4>
+        <h4>CONTEXTO</h4>
         <p>
-          <b
-            >Lorem ipsum dolor sit amet consectetur...</b
-          >
+          Análisis del comportamiento de las acciones de cinco gigantes
+          tecnológicos (<b>AAPL</b>: <i>Apple</i>, <b>GOOGL</b>:
+          <i>Alphabet</i>, <b>MSFT</b>: <i>Microsoft</i>, <b>MSFT</b>:
+          <i>Amazon</i> y <b>META</b>: <i>Meta</i>) durante el periodo de 2020 a
+          2022, que incluyó la época de la pandemia de COVID-19. Con el objetivo
+          de entender si invertir en estas acciones fue un negocio rentable o un
+          riesgo excesivo.
         </p>
-        <br>
+        <br />
+        <p>
+          Utilizaremos una métrica muy útil para entender la rentabilidad de una
+          inversión en relación al riesgo que se asume, el
+          <b>índice de Sharpe.</b>
+        </p>
+        <br /><br />
+
+        <h6><b>¿Qué es este indice?</b></h6>
+
+        <p>
+          El índice de Sharpe (Sharpe Ratio en inglés) es una medida de
+          rendimiento ajustado al riesgo de una inversión o cartera. Fue creada
+          por <b>William F. Sharpe</b> en 1966 y se utiliza comunmente como una
+          forma de evaluar el desempeño de los fondos de inversión y otros tipos
+          de carteras de inversión.
+        </p>
+        <br />
+        <div class="formula-container">
+          <img
+            src="../../../assets/sharpeRatio/sharpeRatioFormula.png"
+            alt=""
+            class="img-fluid mx-auto d-block formula"
+          />
+        </div>
+        <br />
+        <p>
+          Un Sharpe Ratio alto indica que el rendimiento obtenido es es superior
+          al que cabría esperar en relación con el riesgo asumido, mientras que
+          un Sharpe Ratio bajo indica lo contrario.
+        </p>
+      </div>
+    </div>
+
+    <div class="row intro">
+      <div class="col-md-12">
+        <h4>DATOS</h4>
+        <p>
+          Los datos financieros utilizados en este proyecto fueron obtenidos a
+          través de la librería <b>yfinance</b> de Python. Esta librería permite
+          descargar datos históricos y en tiempo real de una amplia variedad de
+          instrumentos financieros de
+          <span style="color: #430297"><b>!Yahoo</b></span
+          ><b> Finance.</b><br />
+          <i>Sin más preámbulos comencemos...</i>
+        </p>
       </div>
     </div>
   </section>
+  <section>
+    <div class="row intro">
+      <div class="col-md-12">
+        <h4>Una primera mirada a los datos</h4>
+        <img
+          src="../../../assets/sharpeRatio/detallesDataSet.png"
+          class="img-fluid mx-auto d-block"
+          alt=""
+        /><br />
+        <ul>
+          <li>
+            El dataset <b>"stocks_data"</b> contiene el dato de cierre diario de
+            las acciones de 5 compañías diferentes
+            <b>(AAPL, AMZN, GOOGL, MSFT, META)</b> desde el 2 de enero de 2020
+            hasta el 30 de diciembre de 2022. Hay un total de 756 observaciones
+            y 5 variables, todas son de tipo float64.
+          </li>
+          <li>
+            Por otro lado, el dataset <b>"benchmark_data"</b> contiene el dato
+            de cierre diario del índice <b>S&P500</b> desde el 2 de enero de
+            2020 hasta el 30 de diciembre de 2022. Hay un total de 756
+            observaciones y 1 variable, que es de tipo float64.
+          </li>
+        </ul>
+      </div>
+      <br />
+      <!-- ##################CIERRES DIARIOS################ -->
+      <div class="col-md-12">
+        <p>
+          <b
+            >Es importante tener una comprensión clara de los datos antes de
+            comparar una inversión en Apple, Amazon, Google, Microsoft o Meta
+            con el índice S&P 500.</b
+          >
+        </p>
+        <br />
+        <!-- CIERRE DIARIO ACCIONES-->
+        <button
+          type="button"
+          class="btn btn-sm btn-secondary"
+          data-bs-toggle="modal"
+          data-bs-target="#cierreDiarioAccModal"
+        >
+          👁
+        </button>
+        <div>
+          <img
+            src="../../../assets/sharpeRatio/cierreDiarioAcc.png"
+            alt=""
+            class="img-fluid mx-auto d-block"
+          />
+        </div>
+
+        <!-- Modal CIERRE DIARIO ACCIONES -->
+        <div
+          class="modal fade"
+          id="cierreDiarioAccModal"
+          tabindex="-1"
+          aria-labelledby="cierreDiarioAccModalLabel"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button
+                  type="button"
+                  class="btn-close"
+                  data-bs-dismiss="modal"
+                  aria-label="Close"
+                ></button>
+              </div>
+              <div class="modal-body">
+                <img
+                  src="../../../assets/sharpeRatio/cierreDiarioAcc.png"
+                  class="img-fluid mx-auto d-block"
+                  alt=""
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+        <img
+          src="../../../assets/sharpeRatio/describeAccClose.png"
+          class="img-fluid mx-auto d-block"
+          alt=""
+        />
+        <ul>
+          <li>
+            <b>AAPL:</b> El precio de cierre diario de las acciones de Apple
+            (AAPL) tiene una media de U$S 129.09, con una desviación estándar de
+            U$S 30.77. El precio mínimo fue de U$S 54.99 y el máximo de U$S
+            180.68.
+          </li>
+          <li>
+            <b>AMZN:</b> El precio de cierre diario de las acciones de Amazon
+            (AMZN) tiene una media de U$S 142.46, con una desviación estándar de
+            U$S 27.86. El precio mínimo fue de U$S 81.82 y el máximo de U$S
+            186.57.
+          </li>
+          <li>
+            <b>GOOGL:</b> El precio de cierre diario de las acciones de Alphabet
+            Inc., clase A (GOOGL) tiene una media de U$S 104.26, con una
+            desviación estándar de U$S 26.47. El precio mínimo fue de U$S 52.71
+            y el máximo de U$S 149.84.
+          </li>
+          <li>
+            <b>MSFT:</b> El precio de cierre diario de las acciones de Microsoft
+            (MSFT) tiene una media de U$S 242.17, con una desviación estándar de
+            U$S 48.01. El precio mínimo fue de U$S 131.68 y el máximo de U$S
+            339.08.
+          </li>
+          <li>
+            <b>META:</b> El precio de cierre diario de las acciones de Meta
+            Platforms Inc. (META) tiene una media de U$S 245.37, con una
+            desviación estándar de U$S 73.02. El precio mínimo fue de U$S 88.91
+            y el máximo de U$S 382.18.
+          </li>
+        </ul>
+        <br />
+        <!-- CIERRE DIARIO S&P500-->
+        <button
+          type="button"
+          class="btn btn-sm btn-secondary"
+          data-bs-toggle="modal"
+          data-bs-target="#cierreDiarioS&P500Modal"
+        >
+          👁
+        </button>
+        <div>
+          <img
+            src="../../../assets/sharpeRatio/cierreDiarioS&P500.png"
+            alt=""
+            class="img-fluid mx-auto d-block"
+          />
+        </div>
+
+        <!-- Modal CIERRE DIARIO S&P500 -->
+        <div
+          class="modal fade"
+          id="cierreDiarioS&P500Modal"
+          tabindex="-1"
+          aria-labelledby="cierreDiarioS&P500ModalLabel"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button
+                  type="button"
+                  class="btn-close"
+                  data-bs-dismiss="modal"
+                  aria-label="Close"
+                ></button>
+              </div>
+              <div class="modal-body">
+                <img
+                  src="../../../assets/sharpeRatio/cierreDiarioS&P500.png"
+                  class="img-fluid mx-auto d-block"
+                  alt=""
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+        <img
+          src="../../../assets/sharpeRatio/describeS&P500Close.png"
+          class="img-fluid mx-auto d-block"
+          alt=""
+        />
+        <ul>
+          <li>
+            Los datos muestran que el índice S&P500 ha tenido un promedio de
+            cierre diario de alrededor de U$S 3862.09.
+          </li>
+          <li>Una desviación estándar de aproximadamente U$S 551.19.</li>
+          <li>
+            El valor mínimo del cierre diario del índice fue de U$S 2237.40,
+            mientras que el valor máximo fue de U$S 4796.56.
+          </li>
+        </ul>
+      </div>
+      <!-- ##################RETORNOS DIARIOS################ -->
+      <div class="col-md-12">
+        <p>
+          <b
+            >Lo primero que necesitamos para calcular el Sharpe Ratio es el
+            retorno de las aciones, pero los datos disponibles son el valor
+            histórico de cierre de cada una. Por lo tanto, se debe calcular el
+            cambio porcentual en valor de un día a otro para obtener el retorno
+            diario.</b
+          >
+        </p>
+        <br />
+        <!-- RETORNO DIARIO ACCIONES-->
+        <button
+          type="button"
+          class="btn btn-sm btn-secondary"
+          data-bs-toggle="modal"
+          data-bs-target="#retornoDiarioAccModal"
+        >
+          👁
+        </button>
+        <div>
+          <img
+            src="../../../assets/sharpeRatio/retornoDiarioAcc.png"
+            alt=""
+            class="img-fluid mx-auto d-block"
+          />
+        </div>
+
+        <!-- Modal RETORNO DIARIO ACCIONES -->
+        <div
+          class="modal fade"
+          id="retornoDiarioAccModal"
+          tabindex="-1"
+          aria-labelledby="retornoDiarioAccModalLabel"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button
+                  type="button"
+                  class="btn-close"
+                  data-bs-dismiss="modal"
+                  aria-label="Close"
+                ></button>
+              </div>
+              <div class="modal-body">
+                <img
+                  src="../../../assets/sharpeRatio/retornoDiarioAcc.png"
+                  class="img-fluid mx-auto d-block"
+                  alt=""
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+        <img
+          src="../../../assets/sharpeRatio/describeRetornoDiarioAcc.png"
+          class="img-fluid mx-auto d-block"
+          alt=""
+        />
+        <ul>
+          <li>
+            <b>AAPL:</b> El retorno promedio diario es del 0.1%, con una
+            desviación estándar del 2.3%. El rango de retorno diario se
+            encuentra entre -12.9% y 11.9%. Los cuartiles sugieren que alrededor
+            del 50% de los días, el retorno diario se encuentra dentro del rango
+            del -1.1% al 1.4%.
+          </li>
+          <li>
+            <b>AMZN:</b> El retorno promedio diario es del 0.01%, con una
+            desviación estándar del 2.5%. El rango de retorno diario se
+            encuentra entre -14.0% y 13.5%. Los cuartiles sugieren que alrededor
+            del 50% de los días, el retorno diario se encuentra dentro del rango
+            del -1.3% al 1.2%.
+          </li>
+          <li>
+            <b>GOOGL:</b> El retorno promedio diario es del 0.05%, con una
+            desviación estándar del 2.2%. El rango de retorno diario se
+            encuentra entre -11.6% y 9.2%. Los cuartiles sugieren que alrededor
+            del 50% de los días, el retorno diario se encuentra dentro del rango
+            del -0.9% al 1.2%.
+          </li>
+          <li>
+            <b>MSFT:</b> El retorno promedio diario es del 0.08%, con una
+            desviación estándar del 2.2%. El rango de retorno diario se
+            encuentra entre -14.7% y 14.2%. Los cuartiles sugieren que alrededor
+            del 50% de los días, el retorno diario se encuentra dentro del rango
+            del -1.0% al 1.2%.
+          </li>
+          <li>
+            <b>META:</b> El retorno promedio diario es del -0.02%, con una
+            desviación estándar del 3.1%. El rango de retorno diario se
+            encuentra entre -26.4% y 17.6%. Los cuartiles sugieren que alrededor
+            del 50% de los días, el retorno diario se encuentra dentro del rango
+            del -1.3% al 1.5%.
+          </li>
+        </ul>
+        <br />
+        <!-- RETORNO DIARIO S&P500-->
+        <button
+          type="button"
+          class="btn btn-sm btn-secondary"
+          data-bs-toggle="modal"
+          data-bs-target="#retornoDiarioS&P500Modal"
+        >
+          👁
+        </button>
+        <div>
+          <img
+            src="../../../assets/sharpeRatio/retornoDiarioS&P500.png"
+            alt=""
+            class="img-fluid mx-auto d-block"
+          />
+        </div>
+
+        <!-- Modal RETORNO DIARIO S&P500 -->
+        <div
+          class="modal fade"
+          id="retornoDiarioS&P500Modal"
+          tabindex="-1"
+          aria-labelledby="retornoDiarioS&P500ModalLabel"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button
+                  type="button"
+                  class="btn-close"
+                  data-bs-dismiss="modal"
+                  aria-label="Close"
+                ></button>
+              </div>
+              <div class="modal-body">
+                <img
+                  src="../../../assets/sharpeRatio/retornoDiarioS&P500.png"
+                  class="img-fluid mx-auto d-block"
+                  alt=""
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+        <img
+          src="../../../assets/sharpeRatio/describeRetornoDiarioS&P500.png"
+          class="img-fluid mx-auto d-block"
+          alt=""
+        />
+        <ul>
+          <li>
+            El S&P500 tuvo un retorno diario promedio de 0.03%, con una
+            desviación estándar de 1.6%.
+          </li>
+          <li>
+            El retorno mínimo diario fue de -11.98% y el máximo fue de 9.38%.
+          </li>
+          <li>EL %50 de los retornos diarios estuvo por debajo del 0.09%.</li>
+          <li>
+            Además, el primer cuartil de los retornos diarios fue de -0.67%, lo
+            que significa que el 25% de los días el retorno diario estuvo por
+            debajo de ese valor, mientras que el tercer cuartil fue del 0.82%,
+            es decir, que el 75% de los días el retorno diario estuvo por debajo
+            de ese valor.
+          </li>
+        </ul>
+      </div>
+      <!-- ##################EXCESOS DE RETORNO################ -->
+      <div class="col-md-12">
+        <p>
+          <b
+            >Lo siguiente que necesitamos hacer es calcular el desempeño
+            relativo de nuestras acciones ajustadas a nuestro índice, esto se
+            conoce como <i>"Exceso de retorno"</i>
+          </b>
+        </p>
+        <br />
+        <!-- EXCESO DE RETORNO ACCIONES-->
+        <button
+          type="button"
+          class="btn btn-sm btn-secondary"
+          data-bs-toggle="modal"
+          data-bs-target="#excesosdeRetornoModal"
+        >
+          👁
+        </button>
+        <div>
+          <img
+            src="../../../assets/sharpeRatio/excesosDeRetorno.png"
+            alt=""
+            class="img-fluid mx-auto d-block"
+          />
+        </div>
+
+        <!-- Modal EXCESO DE RETORNO ACCIONES -->
+        <div
+          class="modal fade"
+          id="excesosdeRetornoModal"
+          tabindex="-1"
+          aria-labelledby="excesosdeRetornoModalLabel"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button
+                  type="button"
+                  class="btn-close"
+                  data-bs-dismiss="modal"
+                  aria-label="Close"
+                ></button>
+              </div>
+              <div class="modal-body">
+                <img
+                  src="../../../assets/sharpeRatio/excesosDeRetorno.png"
+                  class="img-fluid mx-auto d-block"
+                  alt=""
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+        <img
+          src="../../../assets/sharpeRatio/describeExcesoRetorno.png"
+          class="img-fluid mx-auto d-block"
+          alt=""
+        />
+        <ul>
+          <li>
+            <i
+              >Antes de comenzar a calcular nuestro Sharpe Ratio sacaremos
+              algunas conclusiones de nuestros excesos de retorno:</i
+            >
+            <ul>
+              <li>
+                En general, las cinco acciones tienen medias de exceso de
+                retorno cercanas a cero, lo que sugiere que no hubo una
+                tendencia clara de superar o quedar por debajo del índice en el
+                período analizado. Sin embargo, hay algunas diferencias notables
+                entre las acciones.
+              </li>
+              <li>
+                AAPL y GOOGL tienen medias positivas de exceso de retorno, lo
+                que indica que en promedio superaron al S&P500. Además, ambas
+                acciones tienen un valor máximo de exceso de retorno bastante
+                alto, lo que sugiere que en algunos días tuvieron un rendimiento
+                significativamente mejor que el índice.
+              </li>
+              <li>
+                AMZN y META, por otro lado, tienen medias negativas de exceso de
+                retorno, lo que indica que en promedio quedaron por debajo del
+                S&P500. Además, ambas acciones tienen valores mínimos de exceso
+                de retorno bastante bajos, lo que sugiere que en algunos días
+                tuvieron un rendimiento significativamente peor que el índice.
+              </li>
+              <li>
+                MSFT es la única acción que tiene una media positiva de exceso
+                de retorno y no tiene valores extremos tanto en el lado positivo
+                como en el negativo, lo que indica un rendimiento relativamente
+                estable y consistente en comparación con las otras acciones.
+              </li>
+              <li>
+                En resumen, aunque las acciones tienen medias de exceso de
+                retorno cercanas a cero, hay algunas diferencias notables en
+                cuanto a la variabilidad y consistencia del rendimiento en
+                comparación con el S&P500.
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+  <!-- ########### sharpe Ratio ######################## -->
+  <section>
+    <p><i>Y ahora damas y caballeros...</i></p>
+    <br />
+    <!-- ################## Avg y Std################ -->
+    <div class="col-md-12">
+      <p class="text-center">
+        <b>¡Ha llegado el momento de calcular el Sharpe Ratio!</b>
+      </p>
+      <br />
+      <p>
+        Después de analizar nuestro dataset de retornos excesivos, hemos
+        decidido dividir los datos en tres años consecutivos: 2020, 2021 y
+        2022.<br />
+        <b style="color: red">1.</b> Lo siguiente es obtener el promedio de cada
+        acción en cada uno de estos años para poder realizar los cálculos
+        necesarios.
+      </p>
+      <br />
+      <!-- EXCESOS DE RETORNO PROMEDIO-->
+      <button
+        type="button"
+        class="btn btn-sm btn-secondary"
+        data-bs-toggle="modal"
+        data-bs-target="#avgExcesosRetornoModal"
+      >
+        👁
+      </button>
+      <div>
+        <img
+          src="../../../assets/sharpeRatio/avgExcesoRetorno.png"
+          alt=""
+          class="img-fluid mx-auto d-block"
+        />
+      </div>
+
+      <!-- Modal EXCESOS DE RETORNO PROMEDIO -->
+      <div
+        class="modal fade"
+        id="avgExcesosRetornoModal"
+        tabindex="-1"
+        aria-labelledby="avgExcesosRetornoModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-xl">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <img
+                src="../../../assets/sharpeRatio/avgExcesoRetorno.png"
+                class="img-fluid mx-auto d-block"
+                alt=""
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+      <img
+        src="../../../assets/sharpeRatio/describeAvgExcesoRetorno.png"
+        class="img-fluid mx-auto d-block"
+        alt=""
+      />
+      <br />
+      <ul>
+        <li>
+          En <b>2020</b>, todas las acciones presentaron un exceso de retorno
+          positivo, lo que sugiere que todas ellas superaron el rendimiento del
+          mercado en general.
+        </li>
+        <li>
+          En <b>2021</b>, las acciones tuvieron un rendimiento mixto, con
+          algunas acciones con un exceso de retorno positivo y otras con un
+          exceso de retorno negativo.
+        </li>
+        <li>
+          En <b>2022</b>, todas las acciones presentaron un exceso de retorno
+          negativo, lo que indica que todas ellas tuvieron un rendimiento
+          inferior al del mercado en general.
+        </li>
+      </ul>
+      <br />
+      <p>
+        <b style="color: red">2.</b> Lo siguiente que debemos hacer es calcular
+        la desviación estándar de los excesos de retorno para cada año. Esto no
+        dará una visión de la volatilidad o riesgo de las acciones comparadas
+        con una inversión en S&P500
+      </p>
+      <br />
+      <!-- STANDARD DEV EXCESOS DE RETORNO-->
+      <button
+        type="button"
+        class="btn btn-sm btn-secondary"
+        data-bs-toggle="modal"
+        data-bs-target="#stdExcesosDeRetornoModal"
+      >
+        👁
+      </button>
+      <div>
+        <img
+          src="../../../assets/sharpeRatio/stdExcesoRetorno.png"
+          alt=""
+          class="img-fluid mx-auto d-block"
+        />
+      </div>
+
+      <!-- Modal STANDARD DEV EXCESOS DE RETORNO -->
+      <div
+        class="modal fade"
+        id="stdExcesosDeRetornoModal"
+        tabindex="-1"
+        aria-labelledby="stdExcesosDeRetornoModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-xl">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <img
+                src="../../../assets/sharpeRatio/stdExcesoRetorno.png"
+                class="img-fluid mx-auto d-block"
+                alt=""
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+      <img
+        src="../../../assets/sharpeRatio/describeStdExcesoRetorno.png"
+        class="img-fluid mx-auto d-block"
+        alt=""
+      />
+      <ul>
+        <li>
+          Para el año <b>2020</b>, la acción más volátil fue AMZN con una
+          desviación estándar del retorno diario del 2.04%, seguida de META con
+          1.93%. <br />
+          La acción menos volátil en <b>2020</b> fue GOOGL con una desviación
+          estándar del retorno diario del 1.26%.
+        </li>
+        <li>
+          Para el año <b>2021</b>, la acción más volátil fue META con una
+          desviación estándar del retorno diario del 1.55%.<br />
+          La acción menos volátil en <b>2021</b> fue MSFT con una desviación
+          estándar del retorno diario del 0.93%.
+        </li>
+        <li>
+          Para el año <b>2022</b>, la acción más volátil fue META con una
+          desviación estándar del retorno diario del 3.26%. La compañía ya fue
+          la más volátil en 2020, pero su volatilidad se incrementó aún más en
+          <b>2022</b>.<br />
+          La acción menos volátil en <b>2022</b> fue AAPL con una desviación
+          estándar del retorno diario del 1.14%.
+        </li>
+      </ul>
+      <br />
+    </div>
+    <!-- Calculando el Sharpe Ratio -->
+    <div class="col-md-12">
+      <p class="text-start">
+        <b>Calculamos el Sharpe Ratio:</b><br />
+        <i>Para recapitulizar un poco...</i>
+      </p>
+      <br />
+      <ul>
+        <li>
+          Primero se divide el promedio de los excesos de retorno (calculado en
+          el punto 1) por la desviación estándar de los excesos de retorno
+          (calculado en el punto 2).
+        </li>
+        <li>
+          El resultado de esta división es el Sharpe Ratio, que indica cuánto
+          más o menos retorno tiene la oportunidad de inversión coniderada por
+          unidad de riesgo.
+        </li>
+        <li>
+          Luego el Sharpe Ratio se anualiza multiplicándolo por la raíz cuadrada
+          del número de período (en este caso, días de negociación) en un año.
+          <i
+            >Esto hace que sea más fácil comparar el Sharpe Ratio entre
+            diferentes inversiones y en diferentes períodos de tiempo.</i
+          >
+        </li>
+      </ul>
+      <br />
+      <p>
+        Después de aplicar la magia de los números y las estadísticas
+        menocinados anteriormente, aquí estan los resultados que no te dejarán
+        indiferente <i>(o al menos, espero que no te pongan a dormir)</i> :
+      </p>
+      <br />
+
+      <!-- SHARPE RATIO FINAL-->
+      <button
+        type="button"
+        class="btn btn-sm btn-secondary"
+        data-bs-toggle="modal"
+        data-bs-target="#sharpeRatioModal"
+      >
+        👁
+      </button>
+      <div>
+        <img
+          src="../../../assets/sharpeRatio/sharpeRatio.png"
+          alt=""
+          class="img-fluid mx-auto d-block"
+        />
+      </div>
+
+      <!-- Modal SHARPE RATIO FINAL -->
+      <div
+        class="modal fade"
+        id="sharpeRatioModal"
+        tabindex="-1"
+        aria-labelledby="sharpeRatioModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-xl">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <img
+                src="../../../assets/sharpeRatio/sharpeRatio.png"
+                class="img-fluid mx-auto d-block"
+                alt=""
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+      <img
+        src="../../../assets/sharpeRatio/describeSharpeRatio.png"
+        class="img-fluid mx-auto d-block"
+        alt=""
+      />
+      <ul>
+        <li>
+          En el año <b>2020</b>, todas las acciones tuvieron Sharpe Ratios
+          diarios positivos, lo que indica que su rendimiento ajustado al riesgo
+          fue positivo durante el año. AAPL tuvo el Sharpe Ratio diario más
+          alto, lo que sugiere que tuvo el mejor desempeño ajustado al riesgo
+          diario entre las acciones mencionadas.
+        </li>
+        <li>
+          Al considerar los Sharpe Ratios anualizados en el año 2020, AAPL
+          también tuvo el mejor desempeño ajustado al riesgo, seguido por AMZN.
+          GOOGL, META y MSFT tuvieron Sharpe Ratios anualizados inferiores a 1,
+          lo que sugiere que su rendimiento ajustado al riesgo durante el año
+          fue inferior al de AAPL y AMZN.
+        </li>
+        <li>
+          En el año <b>2021</b>, GOOGL tuvo el Sharpe Ratio diario más alto, lo
+          que sugiere que tuvo el mejor desempeño ajustado al riesgo diario
+          entre las acciones mencionadas. Sin embargo, AMZN tuvo un Sharpe Ratio
+          diario negativo, lo que sugiere que su rendimiento no fue suficiente
+          para compensar el riesgo tomado.
+        </li>
+        <li>
+          Al considerar los Sharpe Ratios anualizados en el año 2021, GOOGL tuvo
+          el mejor desempeño ajustado al riesgo, seguido por AAPL y MSFT. AMZN y
+          META tuvieron Sharpe Ratios anualizados negativos, lo que sugiere que
+          su rendimiento ajustado al riesgo durante el año fue inferior al de
+          las demás acciones.
+        </li>
+        <li>
+          En el año <b>2022</b>, todas las acciones tuvieron Sharpe Ratios
+          diarios y anualizados negativos, lo que sugiere que su rendimiento no
+          fue suficiente para compensar el riesgo tomado durante el año.
+        </li>
+      </ul>
+      <p>
+        En general, podemos concluir que <b>AAPL</b> y <b>GOOGL</b> tuvieron un
+        <span style="color: green"><b>mejor</b></span> desempeño ajustado al
+        riesgo durante los años <b>2020</b> y <b>2021</b>, mientras que en el
+        año <b>2022</b> todas las acciones tuvieron un rendimiento ajustado al
+        riesgo <span style="color: red"><b>negativo</b></span
+        >.
+      </p>
+      <br />
+      <h4 class="text-center">Conclusiones finales</h4>
+      <p>
+        La pandemia de <b>COVID-19</b> ha tenido un gran impacto en la economía
+        mundial y en los mercados financieros. Por lo tanto, es probable haya
+        afectado los resultados de las acciones mencionadas durante los años
+        2020, 2021 y 2022.
+      </p>
+      <br />
+      <p>
+        En el año <b>2020</b>, vimos que todas las acciones mencionadas tuvieron
+        Sharpe Ratios diarios y anualizados positivos. Sin embargo, es
+        importante tener en cuenta que el mercado de valores experimentó una
+        caída significativa en marzo de 2020 debido a la pandemia, pero se
+        recuperó posteriormente a medida que los gobiernos y bancos centrales
+        implementaron medidas de estímulo económico. Por lo tanto, es posible
+        que el impacto de la pandemia en los resultados no haya sido tan grande
+        durante el año 2020 como se podría haber esperado inicialmente.
+      </p>
+      <br />
+      <p>
+        En el año <b>2021</b>, vimos que algunas de las acciones mencionadas
+        tuvieron Sharpe Ratios diarios y anualizados negativos, lo que sugiere
+        que su rendimiento ajustado al riesgo fue negativo durante el año. Es
+        posible que la pandemia haya continuado afectando la economía y los
+        mercados financieros en el año 2021, lo que podría haber contribuido a
+        los resultados negativos de algunas de las acciones mencionadas.
+      </p>
+      <br />
+      <p>
+        En el año <b>2022</b>, vimos que todas las acciones mencionadas tuvieron
+        Sharpe Ratios diarios y anualizados negativos.
+      </p>
+      <br />
+      <p>
+        Si bien no podemos afirmar con certeza cómo la pandemia afectó los
+        resultados de las acciones, es probable que haya contribuido a los
+        resultados positivos y negativos observados en términos de Sharpe Ratio.
+      </p>
+      <br />
+      <p>
+        Además de la pandemia, es probable que otros factores económicos y
+        políticos hayan contribuido a la disminución de los Sharpe Ratios en
+        2021 y más notable aún en 2022. Por ejemplo, el aumento de la inflación,
+        las tensiones comerciales y bélicas entre países
+        <i>(ej. conflicto Rusia - Ucrania)</i>, los cambios en las políticas
+        fiscales y monetarias pueden haber influido en los resultados de las
+        acciones. Además, la volatilidad del mercado y la incertidumbre en torno
+        a la recuperación económica también pueden haber sido factores que
+        afectaron al índice.
+      </p>
+    </div>
+  </section>
+  <hr />
+  <section>
+    <div class="row intro justify-content-center align-items-center">
+      <div class="text-center">
+        <h4>¡Gracias por llegar hasta aquí y leer este artículo!</h4>
+        <p style="text-align: justify">
+          Espero que este proyecto haya sido útil e interesante para los
+          lectores, y les haya brindado una mejor comprensión de los Sharpe
+          Ratios y su importancia en la evaluación del rendimiento de una
+          acción.<br />
+          Agradezco la oportunidad de compartir este proyecto con ustedes y
+          espero haber cumplido con sus expectativas. Si tienen alguna pregunta,
+          sugerencia o comentario, por favor no duden en ponerse en contacto
+          conmigo. Muchas gracias por su atención y tiempo.
+        </p>
+        <br />
+        <p style="font-size: 0.8em; text-align: justify">
+          Si querés explorar más a fondo el análisis y ver el código completo,
+          podes visitar el
+          <a href="https://github.com/juanpsosa/sharpeRatio"
+            >repo de GitHub
+            <img
+              class="ico"
+              src="https://img.icons8.com/fluency-systems-filled/50/000000/github.png"
+          /></a>
+        </p>
+      </div>
+      <button
+        class="btn btn-success btn-sm col-3 d-block"
+        (click)="scrollToTop()"
+        style="margin-top: 15px"
+      >
+        <i></i>Ir al principio
+      </button>
+    </div>
+  </section>
   <!-- FIN DEL DOC -->
+  <br /><br /><br />
 </div>

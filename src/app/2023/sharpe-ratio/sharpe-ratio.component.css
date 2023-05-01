@@ -48,3 +48,13 @@ i,
 a {
   font-size: 0.8em;
 }
+
+.formula {
+  max-width: 60%;
+  height: auto;
+}
+
+.btn {
+  font-size: 0.5em;
+  margin-bottom: 2px;
+}
