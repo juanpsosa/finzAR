@@ -6,6 +6,7 @@ import { PortfolioComponent } from './portfolio/portfolio.component';
 import { SiniestrosVialesSfComponent } from './2022/siniestros-viales-sf/siniestros-viales-sf.component';
 import { ContactComponent } from './contact/contact.component';
 import { SharpeRatioComponent } from './2023/sharpe-ratio/sharpe-ratio.component';
+import { EmseComponent } from './2022/emse/emse.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -14,9 +15,7 @@ const routes: Routes = [
   { path: 'contact', component: ContactComponent},
   { path: 'siniestros-viales-sf', component: SiniestrosVialesSfComponent},
   { path: 'sharpe-ratio', component: SharpeRatioComponent},
-
-
-
+  { path: 'emse', component: EmseComponent},
 ];
 
 @NgModule({

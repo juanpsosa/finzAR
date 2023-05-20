@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { SiniestrosVialesSfComponent } from '../2022/siniestros-viales-sf/siniestros-viales-sf.component';
 
 
 @Component({

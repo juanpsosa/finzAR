@@ -11,6 +11,7 @@ import { PortfolioComponent } from './portfolio/portfolio.component';
 import { SiniestrosVialesSfComponent } from './2022/siniestros-viales-sf/siniestros-viales-sf.component';
 import { ContactComponent } from './contact/contact.component';
 import { SharpeRatioComponent } from './2023/sharpe-ratio/sharpe-ratio.component';
+import { EmseComponent } from './2022/emse/emse.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { SharpeRatioComponent } from './2023/sharpe-ratio/sharpe-ratio.component
     PortfolioComponent,
     SiniestrosVialesSfComponent,
     ContactComponent,
-    SharpeRatioComponent
+    SharpeRatioComponent,
+    EmseComponent
   ],
   imports: [
     BrowserModule,
