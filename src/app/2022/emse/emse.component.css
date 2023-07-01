@@ -1,0 +1,55 @@
+/* aviso */
+.aviso {
+    font-size: 12px;
+    color: rgb(190, 11, 11);
+    font-style: italic;
+  }
+  
+  /* aviso */
+  
+  .container {
+    margin-top: 1em;
+    border-radius: 10px;
+    background-color: #ffff;
+    font-family: var(--primary-font);
+    box-shadow: rgba(50, 50, 93, 0.1) 0px 10px 20px -6px inset,
+      rgba(0, 0, 0, 0.1) 0px 6px 12px -6px inset;
+    border: var(--color-fondo) 5px solid;
+  }
+  
+  h1 {
+    padding-top: 10px;
+    font-size: 1.5em;
+    font-weight: bolder;
+  }
+  
+  h4 {
+    font-size: 1.2em;
+    font-weight: bolder;
+  }
+  .titulo {
+    color: var(--color-letras);
+  }
+  
+  .intro {
+    margin-top: 2rem;
+  }
+  
+  .publicado {
+    font-size: 0.8rem;
+    margin-bottom: 1.5em;
+  }
+  
+  p {
+    margin-bottom: -1em;
+  }
+  
+  i,
+  a {
+    font-size: 0.8em;
+  }
+  
+  .btn {
+    font-size: 0.5em;
+    margin-bottom: 2px;
+  }
