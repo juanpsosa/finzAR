@@ -1,21 +1,18 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
-import { SkillsComponent } from './skills/skills.component';
+import { EducacionComponent } from './educacion/educacion.component';
 import { PortfolioComponent } from './portfolio/portfolio.component';
-import { SiniestrosVialesSfComponent } from './2022/siniestros-viales-sf/siniestros-viales-sf.component';
+import { AsesoriasComponent } from './asesorias/asesorias.component';
 import { ContactComponent } from './contact/contact.component';
 import { SharpeRatioComponent } from './2023/sharpe-ratio/sharpe-ratio.component';
-import { EmseComponent } from './2022/emse/emse.component';
-
 const routes: Routes = [
   { path: '', component: HomeComponent },
-  { path: 'skills', component: SkillsComponent },
+  { path: 'educacion', component: EducacionComponent },
   { path: 'portfolio', component: PortfolioComponent},
   { path: 'contact', component: ContactComponent},
-  { path: 'siniestros-viales-sf', component: SiniestrosVialesSfComponent},
   { path: 'sharpe-ratio', component: SharpeRatioComponent},
-  { path: 'emse', component: EmseComponent},
+  { path: 'asesorias', component: AsesoriasComponent },
 ];
 
 @NgModule({

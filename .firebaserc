@@ -1,5 +1,8 @@
 {
   "projects": {
-    "default": "dsjuanpsosa"
-  }
+    "default": "dsjuanpsosa",
+    "portal": "dsjuanpsosa"
+  },
+  "targets": {},
+  "etags": {}
 }
