@@ -1,82 +1,89 @@
 .hero {
-  padding: 4em 1.5em 2em;
-  background: linear-gradient(to bottom right, #f7f7f7, #ffffff);
+  padding: 5em 2em 3em;
+  background: linear-gradient(135deg, #10454F, #1F6F68);
   text-align: center;
+  color: #E5F2F0;
 }
 
+
 .hero h1 {
-  font-size: 2.4rem;
+  font-size: 2.8rem;
   font-weight: 900;
-  font-family: 'PT Sans', sans-serif;
-  color: #333;
-  margin-bottom: 0.5em;
+  font-family: var(--primary-font);
+  color: var(--color-acento);
+  margin-bottom: 0.6em;
 }
 
 .hero p {
-  font-size: 1.2rem;
-  color: #666;
-  margin-bottom: 1.5em;
-  max-width: 600px;
-  margin-left: auto;
-  margin-right: auto;
-  font-family: 'PT Sans', sans-serif;
+  font-size: 1.15rem;
+  color: var(--color-blanco);
+  margin-bottom: 2em;
+  max-width: 620px;
+  margin-inline: auto;
+  line-height: 1.6;
+  font-family: var(--primary-font);
 }
 
 .cta-button {
-  background-color: #d55132;
-  color: white;
-  font-size: 1rem;
-  font-weight: bold;
-  padding: 12px 24px;
+  background-color: var(--color-acento);
+  color: var(--color-principal);
+  font-size: 1.1rem;
+  font-weight: 700;
+  padding: 12px 28px;
   border: none;
-  border-radius: 8px;
+  border-radius: 10px;
   text-decoration: none;
   transition: background-color 0.3s ease;
-  font-family: 'PT Sans', sans-serif;
+  font-family: var(--primary-font);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
 }
 
 .cta-button:hover {
-  background-color: #b84227;
+  background-color: #d9f764;
 }
+
 .destacados {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2em;
-  padding: 4em 1.5em;
-  background-color: #fefefe;
+  gap: 2.5em;
+  padding: 4em 2em;
+  background-color: var(--color-fondo);
 }
 
 .destacado-card {
-  background-color: #fff;
-  border: 1px solid #ddd;
+  background: linear-gradient(to bottom, #ffffff, #f4ebda); /* degradado claro más balanceado */
+  border: 1px solid #dadada94;
   border-radius: 12px;
   padding: 2em;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-  text-align: center;
+  text-align: left;
   transition: transform 0.2s ease;
+  color: #333; /* ¡Texto legible! */
 }
 
+
+
 .destacado-card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-6px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
 }
 
 .destacado-card h3 {
-  font-size: 1.5rem;
-  margin-bottom: 1em;
-  color: #333;
-  font-family: 'PT Sans', sans-serif;
+  font-size: 1.4rem;
+  margin-bottom: 0.5em;
+  color: #10454F; /* Azul petróleo: serio, visible */
 }
 
 .destacado-card p {
-  color: #666;
+  color: #444; /* Gris oscuro, perfecto para lectura */
   font-size: 1rem;
-  margin-bottom: 1.5em;
+  margin-bottom: 1.2em;
 }
 
 .destacado-card a {
-  text-decoration: none;
-  font-weight: bold;
   color: #d55132;
+  font-weight: bold;
+  text-decoration: none;
   border-bottom: 2px solid transparent;
   transition: border-bottom 0.3s;
 }
@@ -84,4 +91,3 @@
 .destacado-card a:hover {
   border-bottom: 2px solid #d55132;
 }
-

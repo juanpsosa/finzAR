@@ -6,9 +6,10 @@ import { HeaderComponent } from './header/header.component';
 import { HomeComponent } from './home/home.component';
 import { AsesoriasComponent } from './asesorias/asesorias.component';
 import { EducacionComponent } from './educacion/educacion.component';
-import { PortfolioComponent } from './portfolio/portfolio.component';
+import { HerramientasComponent } from './herramientas/herramientas.component';
 import { ContactComponent } from './contact/contact.component';
 import { SharpeRatioComponent } from './2023/sharpe-ratio/sharpe-ratio.component';
+import { TarjetaDeCreditoComponent } from './educacion/tarjeta-de-credito/tarjeta-de-credito.component';
 
 @NgModule({
   declarations: [
@@ -17,9 +18,10 @@ import { SharpeRatioComponent } from './2023/sharpe-ratio/sharpe-ratio.component
     HomeComponent,
     AsesoriasComponent,
     EducacionComponent,
-    PortfolioComponent,
+    HerramientasComponent,
     ContactComponent,
     SharpeRatioComponent,
+    TarjetaDeCreditoComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,12 +1,27 @@
 :root {
-    --color-fondo: #f4ebda;
-    --color-letras: #444444;
-    --color-bordes: #dadada94;
-    --primary-font: 'PT Sans', sans-serif;
-    --secondary-font: 'Annie Use Your Telescope', cursive;
-    --tertiary-font: 'Roboto Mono', monospace;
+  /* 🎨 Colores base */
+  --color-fondo: #10454F;
+  --color-letras: #BDE038;
+  --color-bordes: #dadada94;
 
-  }
+  /* 💚 Paleta FinzAR */
+  --color-principal: #10454F;     /* Azul petróleo oscuro */
+  --color-secundario: #0F6466;    /* Verde petróleo más claro */
+  --color-acento: #BDE038;        /* Verde lima vibrante */
+  --color-blanco: #ffffff;
+  --color-cta: #d55132;           /* Botón naranja */
+  --color-cta-hover: #b84227;
+
+  /* ✍️ Tipografías */
+  --primary-font: 'PT Sans', sans-serif;
+  --secondary-font: 'Annie Use Your Telescope', cursive;
+  --tertiary-font: 'Roboto Mono', monospace;
+
+  /* 🧱 Otros (pueden servirte para escalar estilos) */
+  --espaciado-seccion: 4em;
+  --radius: 12px;
+  --sombra-suave: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
   
 body{
     background-color: var(--color-fondo)
