@@ -10,6 +10,7 @@ import { HerramientasComponent } from './herramientas/herramientas.component';
 import { ContactComponent } from './contact/contact.component';
 import { SharpeRatioComponent } from './2023/sharpe-ratio/sharpe-ratio.component';
 import { TarjetaDeCreditoComponent } from './educacion/tarjeta-de-credito/tarjeta-de-credito.component';
+import { DisclaimerComponent } from './shared/disclaimer/disclaimer.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { TarjetaDeCreditoComponent } from './educacion/tarjeta-de-credito/tarjet
     ContactComponent,
     SharpeRatioComponent,
     TarjetaDeCreditoComponent,
+    DisclaimerComponent,
   ],
   imports: [
     BrowserModule,

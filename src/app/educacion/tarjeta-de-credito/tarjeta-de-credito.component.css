@@ -46,6 +46,20 @@
   text-transform: uppercase;
 }
 
+  .resaltar {
+    font-size: 1.1em;
+    color: #f8d57e;
+    font-weight: 600;
+    text-transform: uppercase; /* Asegura que siempre esté en mayúsculas */
+  }
+
+  .resaltar-no {
+    color: red;
+    font-size: 1.1em;
+    font-weight: bold;
+    text-transform: uppercase; /* Asegura que siempre esté en mayúsculas */
+  }
+
 /* Imagen banner */
 .banner-wrapper {
   width: 100%;
