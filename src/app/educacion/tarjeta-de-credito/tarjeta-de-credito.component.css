@@ -1,31 +1,143 @@
-.under-construction {
-  min-height: 60vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 3em 1.5em;
-  text-align: center;
-  background-color: #fef9f5;
-  color: #444;
-  font-family: 'PT Sans', sans-serif;
+:host {
+  display: block;
+  background-color: var(--color-principal); /* Fondo general del sitio */
+  padding: 40px 0;
 }
 
-.under-construction h1 {
+/* Contenedor del artículo con fondo oscuro */
+.articulo-container {
+  max-width: 850px;
+  margin: 0 auto;
+  background-color: #042940; /* Fondo negro solo para el artículo */
+  padding: 40px 24px;
+  border-radius: 16px;
+}
+
+/* Meta info de fecha y duración */
+.meta-info {
+  font-size: 0.9rem;
+  color: #aaaaaa;
+  margin-bottom: 8px;
+  text-align: left;
+}
+
+/* Título principal */
+.titulo-post {
   font-size: 2rem;
-  font-weight: bold;
-  margin-bottom: 1rem;
-  color: #d55132;
+  color: #ffffff;
+  font-weight: 700;
+  margin-bottom: 10px;
+  text-align: center;
 }
 
-.under-construction p {
+/* Subtítulo */
+.subtitulo-post {
   font-size: 1.1rem;
-  max-width: 500px;
-  margin-bottom: 0.5rem;
+  color: #b0b0b0;
+  font-weight: 400;
+  margin-bottom: 25px;
+  text-align: center;
 }
 
-.firma {
-  margin-top: 1.5rem;
+/* Resaltado dentro del título */
+.bold {
+  color: #f8d57e;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+/* Imagen banner */
+.banner-wrapper {
+  width: 100%;
+  overflow: hidden;
+  border-radius: 16px;
+  margin-bottom: 30px;
+}
+
+.banner-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 16px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+}
+
+/* Contenido principal del artículo */
+.article h1 {
+  font-size: 1.5rem;
+  margin-top: 40px;
+  margin-bottom: 20px;
+  color: #ffffff;
+  text-align: left;
+}
+
+i {
+  color: #ffffffa8;
+  font-size: 0.8rem;
+}
+
+.article h2 {
+  font-size: 1.3rem;
+  margin-top: 40px;
+  color: #ffffff;
+  border-bottom: 1px solid #333;
+  padding-bottom: 5px;
+}
+
+.article h3 {
+  font-size: 1.1rem;
+  margin-top: 30px;
+  color: #f0f0f0;
+}
+
+.article h4 {
+  font-size: 1rem;
+  margin-top: 30px;
+  color: #f0f0f0;
+}
+
+.article p {
+  margin-bottom: 16px;
+  font-size: 1rem;
+  color: #dddddd;
+  line-height: 1.7;
+}
+
+.article ul {
+  padding-left: 20px;
+  margin-bottom: 20px;
+}
+
+.article ul li {
+  margin-bottom: 10px;
+  font-size: 1rem;
+  color: #f4f4f4;
+}
+
+/* Opcional: ítems inactivos o deshabilitados */
+.article ul li.inactivo {
+  color: #888888;
   font-style: italic;
-  color: #777;
+}
+
+/* Resaltados dentro del texto */
+.article strong {
+  color: #f8d57e;
+  font-weight: 600;
+}
+
+.quote-destacada {
+  background-color: #1c1c1c;
+  border-left: 4px solid var(--color-secundario);
+  padding: 1rem 1.5rem;
+  margin: 2rem 0;
+  font-style: italic;
+  color: #f5f5f5;
+}
+
+.quote-destacada footer {
+  margin-top: 0.5rem;
+  text-align: right;
+  font-weight: bold;
+  color: var(--color-cta);
 }
