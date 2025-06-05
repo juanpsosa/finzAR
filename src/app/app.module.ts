@@ -8,12 +8,12 @@ import { AsesoriasComponent } from './asesorias/asesorias.component';
 import { EducacionComponent } from './educacion/educacion.component';
 import { HerramientasComponent } from './herramientas/herramientas.component';
 import { ContactComponent } from './contact/contact.component';
-import { SharpeRatioComponent } from './2023/sharpe-ratio/sharpe-ratio.component';
 import { TarjetaDeCreditoComponent } from './educacion/tarjeta-de-credito/tarjeta-de-credito.component';
 import { DisclaimerComponent } from './shared/disclaimer/disclaimer.component';
 import { CalculadoraCuotasComponent } from './herramientas/calculadora-cuotas/calculadora-cuotas.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FormsModule } from '@angular/forms';
+import { DiccionarioFinancieroComponent } from './educacion/diccionario-financiero/diccionario-financiero.component';
 
 
 @NgModule({
@@ -25,10 +25,10 @@ import { FormsModule } from '@angular/forms';
     EducacionComponent,
     HerramientasComponent,
     ContactComponent,
-    SharpeRatioComponent,
     TarjetaDeCreditoComponent,
     DisclaimerComponent,
     CalculadoraCuotasComponent,
+    DiccionarioFinancieroComponent,
   ],
    imports: [
   BrowserModule,
