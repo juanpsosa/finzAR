@@ -11,6 +11,10 @@ import { ContactComponent } from './contact/contact.component';
 import { SharpeRatioComponent } from './2023/sharpe-ratio/sharpe-ratio.component';
 import { TarjetaDeCreditoComponent } from './educacion/tarjeta-de-credito/tarjeta-de-credito.component';
 import { DisclaimerComponent } from './shared/disclaimer/disclaimer.component';
+import { CalculadoraCuotasComponent } from './herramientas/calculadora-cuotas/calculadora-cuotas.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
+
 
 @NgModule({
   declarations: [
@@ -24,11 +28,15 @@ import { DisclaimerComponent } from './shared/disclaimer/disclaimer.component';
     SharpeRatioComponent,
     TarjetaDeCreditoComponent,
     DisclaimerComponent,
+    CalculadoraCuotasComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
+   imports: [
+  BrowserModule,
+  AppRoutingModule,
+  ReactiveFormsModule,
+  FormsModule,
   ],
+
   providers: [],
   bootstrap: [AppComponent]
 })

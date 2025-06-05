@@ -1,0 +1,114 @@
+<section class="calculator-container">
+  <div class="form-section">
+
+    <!-- FORMULARIO PRINCIPAL -->
+
+    <label class="form-label">
+      <i class="icon">💰</i> ¿Cuánto sale al contado?
+    </label>
+    <input
+      class="input-large"
+      type="number"
+      placeholder="$1.000"
+      [(ngModel)]="contado"
+      (ngModelChange)="calcular()" />
+
+    <label class="form-label">
+      <i class="icon">💳</i> ¿Cuánto sale en cuotas?
+    </label>
+    <input
+      class="input-large"
+      type="number"
+      placeholder="$6.000"
+      [(ngModel)]="cuotasTotal"
+      (ngModelChange)="calcular()" />
+
+    <div class="toggle-container">
+      <label class="toggle-label">
+        <input type="checkbox" [(ngModel)]="usarContado" />
+        Usar precio al contado
+      </label>
+    </div>
+
+    <label class="form-label">
+      <i class="icon">#</i> ¿Cuántas cuotas?
+    </label>
+    <div class="cuotas-grid">
+      <button
+        *ngFor="let n of cuotasOpciones"
+        (click)="setCuotas(n)"
+        [class.selected]="cuotas === n"
+        class="cuota-button">
+        {{ n }}
+      </button>
+
+      <input
+        type="number"
+        class="cuota-custom-input"
+        min="1"
+        placeholder="Otra"
+        [value]="otraCuota"
+        (input)="handleOtraCuota($event)" />
+    </div>
+
+    <div class="info-line" *ngIf="cuotasTotal && cuotas">
+      ✨ {{ cuotas }} cuotas de: ${{ (cuotasTotal / cuotas) | number:'1.2-2' }}
+    </div>
+
+    <details class="accordion">
+      <summary>⚙️ Configuración adicional</summary>
+      <label class="form-label">
+        <i class="icon">📉</i> Tasa de inflación mensual
+      </label>
+      <input
+        class="input-large"
+        type="number"
+        [(ngModel)]="inflacion"
+        (ngModelChange)="calcular()" />
+      <p class="subinfo">Inflación anual: 38.96% | INDEC: 2.78% (MAR 25)</p>
+    </details>
+
+    <!-- PANEL RESUMEN DESPLEGABLE -->
+    <div class="resultado-panel" *ngIf="resultado">
+      <div class="panel-header" (click)="expandido = !expandido">
+        <span>{{ esMejorContado ? '💸 CONTADO ES MEJOR' : '📈 CUOTAS SON MEJOR' }}</span>
+        <span class="flecha">{{ expandido ? '▴' : '▾' }}</span>
+      </div>
+
+      <div class="panel-body" [class.expandido]="expandido">
+        <div class="panel-item tooltip-container">
+          <span class="item-label">📈 {{ (tasaInteres * 100) | number:'1.2-2' }}%</span>
+          <span class="item-sub">
+            Tasa de interés mensual implícita
+            <span class="tooltip-icon">❓
+              <span class="tooltip-text">
+                Es la tasa que estás pagando realmente por financiar. Si es menor a la inflación, las cuotas te benefician.
+              </span>
+            </span>
+          </span>
+        </div>
+
+        <div class="panel-item highlight">
+          <span class="item-label">💵 ${{ contado | number:'1.2-2' }}</span>
+          <span class="item-sub">Precio al contado</span>
+        </div>
+
+        <div class="panel-item">
+          <span class="item-label">💳 ${{ vpn | number:'1.2-2' }}</span>
+          <span class="item-sub">Cuotas ajustadas por inflación</span>
+        </div>
+
+        <div class="panel-item">
+          <span class="item-label">📊 {{ cuotas }} Cuotas</span>
+          <span class="item-sub">Expandí para ver más</span>
+        </div>
+
+        <div class="panel-actions">
+          <button class="action-btn cerrar" (click)="expandido = false">Cerrar</button>
+          <button class="action-btn compartir" (click)="copiarResumen()">🔗 Compartir</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
