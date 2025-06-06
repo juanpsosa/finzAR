@@ -3,231 +3,45 @@
     <span>📅 Publicado: Junio 05, 2025</span> • <span>7 min read</span>
   </div>
 
-  <h1 class="titulo-post">
-    Diccionario <span class="bold">FINANCIERO</span>
-  </h1>
+  <h1 class="titulo-post">Diccionario <span class="bold">FINANCIERO</span></h1>
   <p class="subtitulo-post">Todo lo que necesitás saber</p>
 
   <div class="banner-wrapper">
-    <img src="assets/blog/diccionario-financiero.png" alt="Banner: diccionario financiero" class="banner-img" />
+    <img
+      src="assets/blog/diccionario-financiero.png"
+      alt="Banner: diccionario financiero"
+      class="banner-img"
+    />
   </div>
 
-  <section class="article">
-    <!-- <p><b>Seguramente alguna vez escuchaste o pensaste:</b></p>
-    <ul>
-      <li><i>“¿Pago en cuotas o de contado?”</i></li>
-      <li><i>“¿Me están cobrando interés disfrazado?”</i></li>
-      <li><i>“¿Qué es el mínimo, el interés, la fecha de cierre o el vencimiento?”</i></li>
-    </ul> -->
-    
-    <p>Sitio en construcción... <span class="resaltar"> ¡VOLVEREMOS PRONTO!</span></p>
-
-    <!-- <h2>📜 ¿Qué significa usar bien una tarjeta de crédito?</h2>
-    <p>Usar bien una tarjeta no es solo pagar a término. Es tener criterio financiero: saber cuándo conviene financiar, cuándo es mejor pagar de una y cómo evitar que el resumen se transforme en una bola de nieve.</p>
-    <p>Una tarjeta de crédito bien utilizada puede ayudarte a:</p>
-    <ul>
-      <li>👉 <strong>Preservar liquidez</strong>: Pagás más adelante lo que podrías haber pagado hoy.</li>
-      <li>👉 <strong>Ganar frente a la inflación</strong>: Las cuotas futuras te cuestan menos en términos reales.</li>
-      <li>👉 <strong>Ordenar tus gastos mensuales</strong>: Centralizás y planificás.</li>
-      <li>👉 <strong>Aprovechar beneficios</strong>: descuentos, puntos, millas, cashback.</li>
-      <li>👉 <strong>Mejorar tu historial crediticio</strong>: 
-        <ul>
-          <li>✔️ Demuestra responsabilidad financiera.</li>
-          <li>✔️ Refuerza tu perfil ante bancos y fintechs.</li>
-        </ul>
-      </li>
-    </ul>
-    <p>Una tarjeta mal usada puede:</p>
-    <ul>
-      <li>❌ Generar intereses impagables.</li>
-      <li>❌ Drenarte el ingreso mensual.</li>
-      <li>❌ Hacerte perder el control de tu flujo de fondos.</li>
-      <li>❌ Afectar tu historial crediticio.</li>
-    </ul>
-
-    <h2>🎯 El enfoque correcto</h2>
-    <p>La clave está en comprender la tarjeta de crédito como un <strong>instrumento de gestión de flujo de fondos</strong>, <span class="resaltar-no">NO</span>
-       como una extensión de tus ingresos.</p>
-    <p>Entender esto mejora tus finanzas y tu tranquilidad.</p>
-
-    <h2>Diccionario básico sin tecnicismos ni chamuyo bancario</h2>
-    <p><i>Si ya estás familiarizado con los conceptos como fecha de vencimiento, interés, tasas, etc... podés pasar a la siguiente sección</i></p>
-
-    <h3>📜 Resumen</h3>
-    <ul>
-      <li>Todo lo que compraste</li>
-      <li>Cuánto debés (total y mínimo)</li>
-      <li>Cuándo vence</li>
-      <li>Cuántas cuotas faltan</li>
-      <li>Intereses y comisiones</li>
-    </ul>
-
-    <h3>🗓️ Fecha de cierre</h3>
-    <p>Día en que cierra el resumen. Ej: si cierra el 15, todo lo que comprás hasta ese día entra.</p>
-
-    <h3>💸 Fecha de vencimiento</h3>
-    <p>Último día para pagar sin recargo. Ej: si cierra el 15, puede vencer el 25.</p>
-
-    <h3>💰 Pago mínimo</h3>
-    <p>Mínimo para no caer en mora. Lo que no pagues se financia con intereses altos.</p>
-    <p>⚠️ Si solo pagás el mínimo, podrías terminar debiendo el triple.</p>
-
-    <h3>📊 TNA – Tasa Nominal Anual</h3>
-    <p>Interés anual sin contar otros costos. Ej: TNA 120%.</p>
-
-    <h3>📈 TEA – Tasa Efectiva Anual</h3>
-    <p>Interés real acumulado. Siempre mayor que la TNA. Ej: TNA 120% → TEA ~200%.</p>
-
-    <h3>📜 CFT – Costo Financiero Total</h3>
-    <p>Incluye TODO: interés + IVA + seguros + gastos. Miralo antes de financiar.</p>
-
-    <h3>💵 Límite de compra</h3>
-    <p>Máximo que podés gastar. Si te pasás, te rechaza la compra.</p>
-
-    <h3>🔄 Plan V / Naranja Z / post resumen</h3>
-    <p>Te permiten financiar el resumen. Tienen interés alto, a veces peor que un préstamo.</p>
-
-    <h3>🔒 Consumo pendiente / autorizado / procesado</h3>
-    <ul>
-      <li><strong>Autorizado</strong>: se usó pero aún no aparece en resumen.</li>
-      <li><strong>Procesado</strong>: ya figura en el resumen.</li>
-      <li><strong>Pendiente</strong>: en tránsito, puede cambiar.</li>
-    </ul>
-
-    <h3>🧰 Interés (financiero / punitorio / mora)</h3>
-    <ul>
-      <li><strong>Financiero</strong>: por financiar saldos.</li>
-      <li><strong>Punitorio</strong>: si no pagás a tiempo.</li>
-      <li><strong>Mora</strong>: si no pagás ni el mínimo. Afecta tu historial.</li>
-    </ul>
+  <section class="article" *ngFor="let categoria of categoriasUnicas()">
+    <details class="categoria">
+      <summary class="categoria-titulo">
+        {{ categoria }}
+        <svg
+          class="flecha-svg"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          width="18"
+          height="18"
+        >
+          <path fill="#DBF227" d="M8 5l8 7-8 7z" />
+        </svg>
+      </summary>
+      <div class="terminos">
+        <div
+          class="termino"
+          *ngFor="let termino of terminosFiltradosPorCategoria(categoria)"
+        >
+          <h3>{{ termino.titulo }}</h3>
+          <p>{{ termino.descripcion }}</p>
+          <p *ngIf="termino.link">
+            <a [routerLink]="['/educacion', termino.link]" class="ver-mas"
+              >Ver más</a
+            >
+          </p>
+        </div>
+      </div>
+    </details>
   </section>
-   ··························Cuotas o contado
-  <section class="article">
-  <h2>🧾 1. ¿Conviene siempre pagar en cuotas?</h2>
-
-  <p><strong>¿Te ofrecieron pagar en 12 cuotas fijas? ¿Te parece una buena idea?</strong><br>
-  La respuesta corta es: <strong>depende</strong>.<br>
-  La respuesta real: <strong>tenés que hacerte algunas preguntas clave antes de decidir</strong>.</p>
-
-  <h3>🤔 ¿Las cuotas tienen interés?</h3>
-  <ul>
-    <li>¿Dicen <strong>"sin interés"</strong>? Bien, revisá si el precio es el mismo que al contado.</li>
-    <li>¿Te dicen <strong>"cuotas fijas"</strong>? Cuidado: podría tener el interés camuflado en el precio final.</li>
-  </ul>
-
-  <h3>💸 Veamos un ejemplo:</h3>
-  <div class="ejemplo-box">
-    <p><strong>Vas a comprar un celular.</strong><br>
-    Precio al contado: <strong>$400.000</strong><br>
-    Te ofrecen 12 cuotas fijas de <strong>$43.333,33</strong><br>
-    Total a pagar: <strong>$519.999,96</strong><br>
-    Diferencia: <strong>$119.999 extra</strong><br>
-    Resultado: pagás casi un <strong>30% más</strong> sin que te lo digan.</p>
-  </div>
-
-  <h3>💡 Entonces… ¿qué conviene?</h3>
-  <ul>
-    <li>¿Estoy pagando más que al contado?</li>
-    <li>¿Tengo ese dinero hoy para pagarlo de una?</li>
-    <li>¿Puedo hacer algo mejor con esa plata en vez de gastarla toda ahora? (Ej: invertirla en un FCI, plazo fijo, comprar dólares, etc.)</li>
-    <li>¿Cuánto me afecta comprometerme durante 12 meses?</li>
-  </ul>
-
-  <p><strong>👉 A veces las cuotas ayudan</strong> a organizarte y mantener liquidez.<br>
-  <strong>😬 Otras veces, son una forma silenciosa</strong> de pagarte más caro algo que podrías haber negociado mejor.</p>
-</section>
-ªªªªªªªªªªªªªªªªªªªªªªªª  Importancia de fecha de cierre y vencimiento 
-<section class="article">
-  <h2>📆 2. ¿Por qué es tan importante conocer las fechas de cierre y vencimiento?</h2>
-
-  <p><strong>¿Qué pasa si comprás justo antes del cierre? ¿Y si lo hacés justo después?</strong><br>
-  Conocer estas fechas <strong>te da poder de planificación</strong>. Podés patear pagos más de 30 días sin pagar intereses... si sabés cómo hacerlo.</p>
-
-  <h3>🧠 ¿Cómo funciona esto?</h3>
-  <ul>
-    <li><strong>Fecha de cierre</strong>: día en que se arma tu resumen mensual. Todo lo que comprás hasta ese día entra en ese resumen.</li>
-    <li><strong>Fecha de vencimiento</strong>: el día límite para pagar ese resumen sin recargo. Suele estar entre 10 y 15 días después del cierre.</li>
-  </ul>
-
-  <h3>💡 ¿Y cómo se aprovecha?</h3>
-  <p>Supongamos que:</p>
-  <ul>
-    <li>Tu tarjeta <strong>cierra el 20 de cada mes</strong></li>
-    <li>Y <strong>vence el 5 del mes siguiente</strong></li>
-  </ul>
-
-  <div class="ejemplo-box">
-    <p><strong>Comprás el 19 de junio</strong> → entra en el resumen de junio, vence el 5 de julio (16 días para pagar).</p>
-    <p><strong>Comprás el 21 de junio</strong> → entra en el resumen de julio, vence el 5 de agosto (45 días para pagar).</p>
-  </div>
-
-  <p><strong>Resultado:</strong> si esperás solo 2 días, ganás casi un mes entero de financiación gratuita.</p>
-
-  <h3>🎯 ¿Cuándo conviene aprovechar esto?</h3>
-  <ul>
-    <li>Si vas a hacer un gasto grande, <strong>esperá al día siguiente del cierre</strong>.</li>
-    <li>Así conservás tu plata más tiempo y podés <strong>invertirla</strong> o mantener liquidez.</li>
-    <li>Es ideal si estás por cobrar el sueldo, un aguinaldo o rendimientos de un FCI.</li>
-  </ul>
-</section>
-<section class="article">
-  ªªªªªªªªªªªªªªªªªªªªªªªªªªªªªªªªªªªªªªªªªªªªª Sección: ¿Qué hacés con la liquidez que ganaste?
-  <h2>💡 3. Una vez que ganás liquidez... ¿qué hacés?</h2>
-  <p>Está buenísimo “patear el pago” para dentro de 30 o 45 días. Pero si solo dejás la plata en la cuenta, se te va desvalorizando con la inflación.</p>
-  <p>La clave es: <strong>convertir esa liquidez en rentabilidad</strong>, aunque sea mínima.</p>
-
-  <h3>🏦 ¿Dónde podés poner esa plata mientras tanto?</h3>
-
-  <h4>1. Fondo Común de Inversión (FCI) Money Market</h4>
-  <i>(Naranja X, UALÁ, Mercado Pago son los más comunes) <a href="">ver todos los (FCI) Money Market</a></i>
-  <ul>
-    <li>Es como una "caja de ahorro que rinde".</li>
-    <li>Te da liquidez inmediata (retirás cuando querés) y algo de rendimiento diario.</li>
-    <li>En junio 2025 están rindiendo aprox. un 24-29% (TNA) anual.</li>
-    <li>Perfecto si no querés complicarte.</li>
-  </ul>
-
-  <h4>2. Plazo Fijo Tradicional</h4>
-  <i>Para usuarios con planificación financiera más avanzada</i>
-  <ul>
-    <li>Te inmovilizás por 30 días, pero te da más rendimiento que un FCI.</li>
-    <li>Rinde ~30-35% (TNA) anual (según el banco).</li>
-    <li>Ideal si sabés que no vas a tocar esa plata hasta pagar la tarjeta.</li>
-  </ul>
-
-  <h3>💰 Ejemplo práctico</h3>
-  <p>Comprás un celu en 12 cuotas sin interés. No ponés los $400.000 de una.</p>
-  <p>En vez de dejarlos en caja de ahorro:</p>
-  <ul>
-    <li>Metés $200.000 en un FCI → ganás $1.800–2.000 en un mes.</li>
-    <li>Ponés $200.000 en plazo fijo → ganás $2.500 aprox.</li>
-  </ul>
-  <p><strong>Resultado:</strong> ganaste rentabilidad sin esfuerzo, simplemente porque elegiste pagar más tarde con inteligencia.</p>
-
-
-</section>
-
-ªªªªªªªªªªªªªªªªªªªªªªªªªªªªªªªªªªªªªªªªªªªªªªªªªªªªCierre del artículo
-
-<section class="article">
-  <h2>✅ En resumen: no es magia, es estrategia</h2>
-  <p>Pagar en cuotas no siempre es bueno. Tampoco lo es pagar todo al contado.<br>
-  La clave está en <strong>entender cómo funciona el sistema y usarlo a tu favor</strong>.</p>
-  <blockquote>
-    <p>⏳ Usar el tiempo como aliado.<br>
-    📊 Tomar decisiones con información.<br>
-    💰 Aprovechar cada peso que tenés disponible.</p>
-  </blockquote>
-  <p>No necesitás ser economista para ordenar tus finanzas.<br>
-  Solo necesitás criterio y algunas buenas prácticas como las que viste acá.</p>
-
-  <h3>🚀 Próximo paso</h3>
-  <p>Revisá tu próximo resumen, analizá qué consumos podrías mover, y pensá:<br>
-  <strong>¿Estoy usando mi tarjeta como herramienta o como trampa?</strong></p>
-</section>
-  <blockquote class="quote-destacada">
-  <p>"No hace falta hacer cosas extraordinarias para obtener resultados extraordinarios. Solo hace falta hacer cosas ordinarias excepcionalmente bien."</p>
-  <footer>– Warren Buffett</footer>
-</blockquote>
-
-</div> -->
+</div>

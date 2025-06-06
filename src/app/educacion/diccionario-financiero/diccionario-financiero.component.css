@@ -1,36 +1,33 @@
 :host {
   display: block;
-  background-color: var(--color-principal); /* Fondo general del sitio */
+  background-color: #001f2e;
   padding: 40px 0;
 }
 
-/* Contenedor del artículo con fondo oscuro */
 .articulo-container {
-  max-width: 850px;
+  max-width: 900px;
   margin: 0 auto;
-  background-color: #042940; /* Fondo negro solo para el artículo */
-  padding: 40px 24px;
-  border-radius: 16px;
+  background-color: #00343d;
+  padding: 40px 30px;
+  border-radius: 18px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
 }
 
-/* Meta info de fecha y duración */
 .meta-info {
   font-size: 0.9rem;
-  color: #aaaaaa;
+  color: #c7c7c7;
   margin-bottom: 8px;
   text-align: left;
 }
 
-/* Título principal */
 .titulo-post {
   font-size: 2rem;
-  color: #ffffff;
+  color: var(--color-acento);
   font-weight: 700;
   margin-bottom: 10px;
   text-align: center;
 }
 
-/* Subtítulo */
 .subtitulo-post {
   font-size: 1.1rem;
   color: #b0b0b0;
@@ -39,28 +36,11 @@
   text-align: center;
 }
 
-/* Resaltado dentro del título */
 .bold {
-  color: #f8d57e;
-  font-weight: 700;
+  color: var(--color-acento);
   text-transform: uppercase;
 }
 
-  .resaltar {
-    font-size: 1.1em;
-    color: #f8d57e;
-    font-weight: 600;
-    text-transform: uppercase; /* Asegura que siempre esté en mayúsculas */
-  }
-
-  .resaltar-no {
-    color: red;
-    font-size: 1.1em;
-    font-weight: bold;
-    text-transform: uppercase; /* Asegura que siempre esté en mayúsculas */
-  }
-
-/* Imagen banner */
 .banner-wrapper {
   width: 100%;
   overflow: hidden;
@@ -76,82 +56,73 @@
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
 }
 
-/* Contenido principal del artículo */
-.article h1 {
-  font-size: 1.5rem;
-  margin-top: 40px;
+details.categoria {
   margin-bottom: 20px;
-  color: #ffffff;
-  text-align: left;
+  border: 1px solid #005C53;
+  border-radius: 10px;
+  background-color: #01292f;
+  overflow: hidden;
+  transition: all 0.3s ease;
 }
 
-i {
-  color: #ffffffa8;
-  font-size: 0.8rem;
-}
-
-.article h2 {
-  font-size: 1.3rem;
-  margin-top: 40px;
-  color: #ffffff;
-  border-bottom: 1px solid #333;
-  padding-bottom: 5px;
-}
-
-.article h3 {
+details.categoria summary {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 24px;
   font-size: 1.1rem;
-  margin-top: 30px;
-  color: #f0f0f0;
-}
-
-.article h4 {
-  font-size: 1rem;
-  margin-top: 30px;
-  color: #f0f0f0;
-}
-
-.article p {
-  margin-bottom: 16px;
-  font-size: 1rem;
-  color: #dddddd;
-  line-height: 1.7;
-}
-
-.article ul {
-  padding-left: 20px;
-  margin-bottom: 20px;
-}
-
-.article ul li {
-  margin-bottom: 10px;
-  font-size: 1rem;
-  color: #f4f4f4;
-}
-
-/* Opcional: ítems inactivos o deshabilitados */
-.article ul li.inactivo {
-  color: #888888;
-  font-style: italic;
-}
-
-/* Resaltados dentro del texto */
-.article strong {
-  color: #f8d57e;
   font-weight: 600;
+  color: #D6D58E;
+  cursor: pointer;
+  background-color: transparent;
+  list-style: none;
+  user-select: none;
 }
 
-.quote-destacada {
-  background-color: #1c1c1c;
-  border-left: 4px solid var(--color-secundario);
-  padding: 1rem 1.5rem;
-  margin: 2rem 0;
-  font-style: italic;
-  color: #f5f5f5;
+.flecha-svg {
+  transition: transform 0.3s ease;
 }
 
-.quote-destacada footer {
-  margin-top: 0.5rem;
-  text-align: right;
-  font-weight: bold;
-  color: var(--color-cta);
+details[open] .flecha-svg {
+  transform: rotate(90deg);
+}
+
+details.categoria .terminos {
+  padding: 10px 24px 20px;
+  background-color: #021f24;
+}
+
+.termino {
+  margin-bottom: 24px;
+}
+
+.termino h3 {
+  font-size: 1.05rem;
+  color: #ffffff;
+  margin-bottom: 5px;
+}
+
+.termino p {
+  font-size: 0.95rem;
+  color: #dcdcdc;
+  line-height: 1.6;
+  margin-bottom: 10px;
+}
+
+.ver-mas {
+  display: inline-block;
+  margin-top: 8px;
+  padding: 6px 14px;
+  background-color: transparent;
+  border: 1px solid var(--color-acento);;
+  color: var(--color-acento);
+  border-radius: 6px;
+  font-size: 0.9rem;
+  text-decoration: none;
+  transition: all 0.2s ease-in-out;
+}
+
+.ver-mas:hover {
+  color: var(--color-acento);
+  color: #001f2e;
 }

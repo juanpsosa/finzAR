@@ -1,6 +1,6 @@
 :host {
   display: block;
-  background-color: var(--color-principal); /* Fondo general del sitio */
+  background-color: #001f2e; /* Fondo general */
   padding: 40px 0;
 }
 
@@ -8,7 +8,7 @@
 .articulo-container {
   max-width: 850px;
   margin: 0 auto;
-  background-color: #042940; /* Fondo negro solo para el artículo */
+  background-color: #00343d;
   padding: 40px 24px;
   border-radius: 16px;
 }
@@ -41,24 +41,10 @@
 
 /* Resaltado dentro del título */
 .bold {
-  color: #f8d57e;
+  color: var(--color-acento);
   font-weight: 700;
   text-transform: uppercase;
 }
-
-  .resaltar {
-    font-size: 1.1em;
-    color: #f8d57e;
-    font-weight: 600;
-    text-transform: uppercase; /* Asegura que siempre esté en mayúsculas */
-  }
-
-  .resaltar-no {
-    color: red;
-    font-size: 1.1em;
-    font-weight: bold;
-    text-transform: uppercase; /* Asegura que siempre esté en mayúsculas */
-  }
 
 /* Imagen banner */
 .banner-wrapper {
@@ -76,7 +62,7 @@
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
 }
 
-/* Contenido principal del artículo */
+/* Contenido principal */
 .article h1 {
   font-size: 1.5rem;
   margin-top: 40px;
@@ -85,14 +71,10 @@
   text-align: left;
 }
 
-i {
-  color: #ffffffa8;
-  font-size: 0.8rem;
-}
-
 .article h2 {
   font-size: 1.3rem;
   margin-top: 40px;
+  margin-bottom: 10px;
   color: #ffffff;
   border-bottom: 1px solid #333;
   padding-bottom: 5px;
@@ -117,6 +99,7 @@ i {
   line-height: 1.7;
 }
 
+/* Listas */
 .article ul {
   padding-left: 20px;
   margin-bottom: 20px;
@@ -126,9 +109,10 @@ i {
   margin-bottom: 10px;
   font-size: 1rem;
   color: #f4f4f4;
+  line-height: 1.6;
 }
 
-/* Opcional: ítems inactivos o deshabilitados */
+/* Ítems inactivos */
 .article ul li.inactivo {
   color: #888888;
   font-style: italic;
@@ -140,6 +124,21 @@ i {
   font-weight: 600;
 }
 
+.resaltar {
+  font-size: 1.05rem;
+  color: #f8d57e;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.resaltar-no {
+  color: red;
+  font-size: 1.05rem;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+/* Cita destacada */
 .quote-destacada {
   background-color: #1c1c1c;
   border-left: 4px solid var(--color-secundario);
@@ -154,4 +153,9 @@ i {
   text-align: right;
   font-weight: bold;
   color: var(--color-cta);
+}
+
+/* Íconos dentro de listas (opcional) */
+.article ul li::marker {
+  color: #f8d57e;
 }
