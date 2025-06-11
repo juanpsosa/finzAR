@@ -1,4 +1,17 @@
 import { Component } from '@angular/core';
+import {
+  Wallet,
+  CreditCard,
+  PiggyBank,
+  BookOpenCheck,
+  Banknote,
+  Coins,
+  LineChart,
+  TrendingDown,
+  TrendingUp,
+  CalendarDays,
+  Shield
+} from 'lucide';
 
 export interface TerminoFinanciero {
   titulo: string;
@@ -14,6 +27,7 @@ export interface TerminoFinanciero {
 })
 export class DiccionarioFinancieroComponent {
   terminos: TerminoFinanciero[] = [
+    
     // Educación financiera
     {
       titulo: '¿Qué es el dinero?',
@@ -342,6 +356,24 @@ export class DiccionarioFinancieroComponent {
     },
     // ← Seguí agregando más términos siguiendo el mismo formato
   ];
+
+  // ✅ Íconos asociados a categorías
+  iconosPorCategoria: { [categoria: string]: string } = {
+    'Educación Financiera': 'book-open-check',
+    'Ahorro & Consumo': 'piggy-bank',
+    'Trabajo e Ingresos': 'calendar-days',
+    'Trabajo & Sueldo': 'calendar-days',
+    'Tarjeta de Crédito': 'credit-card',
+    'Banca Tradicional': 'banknote',
+    'Inversiones': 'line-chart',
+    'Criptomonedas': 'trending-up',
+    'Impuestos': 'coins',
+    'Seguros': 'shield',
+    'Fintech': 'wallet',
+    'Préstamos': 'banknote',
+    'Gastos': 'trending-down',
+    'Sueldo': 'calendar-days'
+  };
 
   categoriasUnicas(): string[] {
     return [...new Set(this.terminos.map((t) => t.categoria))];

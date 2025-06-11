@@ -126,3 +126,11 @@ details.categoria .terminos {
   color: var(--color-acento);
   color: #001f2e;
 }
+
+.icon-inline {
+  width: 1.2em;
+  height: 1.2em;
+  margin-right: 8px;
+  vertical-align: middle;
+  stroke: currentColor;
+}

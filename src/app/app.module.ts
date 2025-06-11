@@ -11,10 +11,30 @@ import { ContactComponent } from './contact/contact.component';
 import { TarjetaDeCreditoComponent } from './educacion/tarjeta-de-credito/tarjeta-de-credito.component';
 import { DisclaimerComponent } from './shared/disclaimer/disclaimer.component';
 import { CalculadoraCuotasComponent } from './herramientas/calculadora-cuotas/calculadora-cuotas.component';
-import { ReactiveFormsModule } from '@angular/forms';
-import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { DiccionarioFinancieroComponent } from './educacion/diccionario-financiero/diccionario-financiero.component';
+import { GestionDeGastosComponent } from './educacion/gestion-de-gastos/gestion-de-gastos.component';
 
+// ✅ Lucide Angular
+import { LucideAngularModule } from 'lucide-angular';
+import {
+  Wallet,
+  Wrench,
+  BarChart3,
+  Home,
+  BookOpenCheck,
+  UserCheck,
+  Info,
+  PiggyBank,
+  CalendarDays,
+  CreditCard,
+  Banknote,
+  LineChart,
+  TrendingUp,
+  Coins,
+  Shield,
+  TrendingDown,
+} from 'lucide';
 
 @NgModule({
   declarations: [
@@ -29,15 +49,33 @@ import { DiccionarioFinancieroComponent } from './educacion/diccionario-financie
     DisclaimerComponent,
     CalculadoraCuotasComponent,
     DiccionarioFinancieroComponent,
+    GestionDeGastosComponent,
   ],
-   imports: [
-  BrowserModule,
-  AppRoutingModule,
-  ReactiveFormsModule,
-  FormsModule,
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    ReactiveFormsModule,
+    FormsModule,
+    LucideAngularModule.pick({
+      Wallet,
+      Wrench,
+      BarChart3,
+      Home,
+      BookOpenCheck,
+      UserCheck,
+      Info,
+      PiggyBank,
+      CalendarDays,
+      CreditCard,
+      Banknote,
+      LineChart,
+      TrendingUp,
+      Coins,
+      Shield,
+      TrendingDown,
+    }),
   ],
-
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

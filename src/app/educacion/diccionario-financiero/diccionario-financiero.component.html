@@ -17,6 +17,9 @@
   <section class="article" *ngFor="let categoria of categoriasUnicas()">
     <details class="categoria">
       <summary class="categoria-titulo">
+        <ng-container *ngIf="iconosPorCategoria[categoria] as icono">
+          <lucide-icon [name]="icono" class="icon-inline"></lucide-icon>
+        </ng-container>
         {{ categoria }}
         <svg
           class="flecha-svg"
@@ -28,6 +31,7 @@
           <path fill="#DBF227" d="M8 5l8 7-8 7z" />
         </svg>
       </summary>
+
       <div class="terminos">
         <div
           class="termino"
@@ -36,9 +40,9 @@
           <h3>{{ termino.titulo }}</h3>
           <p>{{ termino.descripcion }}</p>
           <p *ngIf="termino.link">
-            <a [routerLink]="['/educacion', termino.link]" class="ver-mas"
-              >Ver más</a
-            >
+            <a [routerLink]="['/educacion', termino.link]" class="ver-mas">
+              Ver más
+            </a>
           </p>
         </div>
       </div>
