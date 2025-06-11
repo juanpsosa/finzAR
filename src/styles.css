@@ -7,7 +7,9 @@
   /* 💚 Paleta FinzAR */
   --color-principal: #10454F;     /* Azul petróleo oscuro */
   --color-secundario: #0F6466;    /* Verde petróleo más claro */
-  --color-acento: #BDE038;        /* Verde lima vibrante */
+  --color-acento: #BDE038;
+  --color-resaltar: #A4C3B2;
+  --color-resaltar1: #D6D58E;        /* Verde lima vibrante */
   --color-blanco: #ffffff;
   --color-cta: #d55132;           /* Botón naranja */
   --color-cta-hover: #b84227;

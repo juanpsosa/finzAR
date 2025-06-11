@@ -110,9 +110,6 @@ nav ul li a:hover {
 .nav-icon {
   width: 1.1em;
   height: 1.1em;
-  margin-right: 6px;
-  vertical-align: middle;
+  margin-right: 5px;
   stroke: currentColor;
 }
-
-

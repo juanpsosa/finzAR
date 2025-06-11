@@ -11,7 +11,7 @@ import {
   TrendingUp,
   CalendarDays,
   Shield
-} from 'lucide';
+} from 'lucide-angular';
 
 export interface TerminoFinanciero {
   titulo: string;
@@ -252,36 +252,6 @@ export class DiccionarioFinancieroComponent {
         'Nivel de tolerancia al riesgo que tiene un inversor. Puede ser conservador, moderado o agresivo.',
       categoria: 'Inversiones',
     },
-    // Trabajo y sueldo
-    {
-      titulo: 'Recibo de sueldo',
-      descripcion:
-        'Documento que detalla cuánto cobrás, tus descuentos, aportes y retenciones.',
-      categoria: 'Trabajo & Sueldo',
-    },
-    {
-      titulo: 'Carga social',
-      descripcion:
-        'Aportes obligatorios que realiza el empleador sobre tu salario.',
-      categoria: 'Trabajo & Sueldo',
-    },
-    {
-      titulo: 'Aportes vs Contribuciones',
-      descripcion:
-        'Aportes: lo que va a tu jubilación. Contribuciones: lo que paga el empleador por vos.',
-      categoria: 'Trabajo & Sueldo',
-    },
-    {
-      titulo: 'Ingreso bruto',
-      descripcion: 'El sueldo total antes de descuentos e impuestos.',
-      categoria: 'Trabajo & Sueldo',
-    },
-    {
-      titulo: 'Ingreso neto',
-      descripcion:
-        'El dinero que efectivamente cobrás tras todos los descuentos.',
-      categoria: 'Trabajo & Sueldo',
-    },
     // Criptomonedas
     {
       titulo: 'Criptomoneda',
@@ -361,12 +331,11 @@ export class DiccionarioFinancieroComponent {
   iconosPorCategoria: { [categoria: string]: string } = {
     'Educación Financiera': 'book-open-check',
     'Ahorro & Consumo': 'piggy-bank',
-    'Trabajo e Ingresos': 'calendar-days',
-    'Trabajo & Sueldo': 'calendar-days',
+    'Trabajo e Ingresos': 'dollar-sign',
     'Tarjeta de Crédito': 'credit-card',
-    'Banca Tradicional': 'banknote',
-    'Inversiones': 'line-chart',
-    'Criptomonedas': 'trending-up',
+    'Banca Tradicional': 'landmark-icon',
+    'Inversiones': 'chart-line',
+    'Criptomonedas': 'bitcoin',
     'Impuestos': 'coins',
     'Seguros': 'shield',
     'Fintech': 'wallet',
