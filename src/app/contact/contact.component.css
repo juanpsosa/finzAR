@@ -1,31 +1,120 @@
-.under-construction {
-  min-height: 60vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 3em 1.5em;
-  text-align: center;
-  background-color: #fef9f5;
-  color: #444;
-  font-family: 'PT Sans', sans-serif;
+:host {
+  display: block;
+  background-color: #001f2e; /* Fondo general */
+  padding: 40px 0;
 }
 
-.under-construction h1 {
+.articulo-container {
+  max-width: 850px;
+  margin: 0 auto;
+  background-color: #00343d;
+  padding: 40px 24px;
+  border-radius: 16px;
+}
+
+
+.titulo-post {
   font-size: 2rem;
-  font-weight: bold;
-  margin-bottom: 1rem;
-  color: #d55132;
+  color: #ffffff;
+  font-weight: 700;
+  margin-bottom: 10px;
+  text-align: center;
 }
 
-.under-construction p {
+.subtitulo-post {
   font-size: 1.1rem;
-  max-width: 500px;
-  margin-bottom: 0.5rem;
+  color: #b0b0b0;
+  font-weight: 400;
+  margin-bottom: 25px;
+  text-align: center;
 }
 
-.firma {
-  margin-top: 1.5rem;
-  font-style: italic;
-  color: #777;
+.bold {
+  color: var(--color-acento);
+  font-weight: 700;
+  text-transform: uppercase;
 }
+
+.banner-wrapper {
+  width: 100%;
+  overflow: hidden;
+  border-radius: 16px;
+  margin-bottom: 30px;
+}
+
+.banner-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 16px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+}
+
+.article p {
+  margin-bottom: 16px;
+  font-size: 1rem;
+  color: #dddddd;
+  line-height: 1.7;
+}
+
+.article h2 {
+  font-size: 1.3rem;
+  margin-top: 40px;
+  margin-bottom: 10px;
+  color: #ffffff;
+  border-bottom: 1px solid #ffffff50;
+  padding-bottom: 5px;
+}
+
+ul.sin-puntos {
+  list-style: none;
+  padding-left: 0;
+}
+
+ul.sin-puntos li {
+  margin-bottom: 10px;
+  font-size: 1rem;
+  color: #f4f4f4;
+  line-height: 1.6;
+}
+
+.icon-inline {
+  width: 18px;
+  height: 18px;
+  vertical-align: middle;
+  margin-right: 5px;
+}
+
+a {
+  text-decoration: none;
+  color: var(--color-acento);
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #f8d57e; /* o el color que prefieras para hover */
+}
+
+
+.logo-inline-logo {
+  height: 22px;
+  vertical-align: middle;
+  margin: inherit;
+}
+
+h1 {
+    color: var(--color-blanco);
+    font-family: var(--primary-font);
+    padding-top: .5em;
+    font-size: 1.5rem;
+    font-weight: 900;
+    text-align: center;
+}
+.separador {
+  border: none;
+  border-top: 1px solid #ffffff30;
+  margin: 2rem 0;
+}
+
+
+

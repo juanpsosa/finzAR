@@ -16,7 +16,7 @@ import { DiccionarioFinancieroComponent } from './educacion/diccionario-financie
 import { GestionDeGastosComponent } from './educacion/gestion-de-gastos/gestion-de-gastos.component';
 
 // ✅ Lucide Angular
-import { ArrowBigRight, BarChart, LucideAngularModule, Recycle, ScrollTextIcon, ShieldQuestion } from 'lucide-angular';
+import { ArrowBigRight, BarChart, Calendar, LucideAngularModule, Recycle, ScrollTextIcon, ShieldQuestion } from 'lucide-angular';
 import {
   CreditCard,
   Wallet,
@@ -83,6 +83,18 @@ import {
   SquarePen,
   Bitcoin,
   LandmarkIcon,
+  Download,
+  ChartPie,
+  Utensils,
+  AlertTriangleIcon,
+  Smartphone,
+  CalendarCheck,
+  UserCheckIcon,
+  SettingsIcon,
+  Mail,
+  Instagram,
+  Github,
+
   
 } from 'lucide-angular';
 
@@ -172,6 +184,19 @@ import {
   SquarePen,
   Bitcoin,
   LandmarkIcon,
+  Download,
+  ChartPie,
+  Utensils,
+  AlertTriangleIcon,
+  Smartphone,
+  CalendarCheck,
+  ShieldQuestion,
+  UserCheckIcon,
+  SettingsIcon,
+  Mail,
+  Instagram,
+  Github,
+
 }),
   ],
   providers: [],
