@@ -13,8 +13,8 @@ import { DisclaimerComponent } from './shared/disclaimer/disclaimer.component';
 import { CalculadoraCuotasComponent } from './herramientas/calculadora-cuotas/calculadora-cuotas.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { DiccionarioFinancieroComponent } from './educacion/diccionario-financiero/diccionario-financiero.component';
-import { GestionDeGastosComponent } from './educacion/gestion-de-gastos/gestion-de-gastos.component';
 import { PlanillaGastosComponent } from './herramientas/planilla-gastos/planilla-gastos.component';
+import { OrdenFinancieroComponent } from './educacion/orden-financiero/orden-financiero.component';
 
 // ✅ Lucide Angular
 import {
@@ -119,8 +119,8 @@ import {
     DisclaimerComponent,
     CalculadoraCuotasComponent,
     DiccionarioFinancieroComponent,
-    GestionDeGastosComponent,
     PlanillaGastosComponent,
+    OrdenFinancieroComponent,
   ],
   imports: [
     BrowserModule,

@@ -11,7 +11,7 @@ export class CalculadoraCuotasComponent implements OnInit {
   usarContado: boolean = false;
   cuotas: number = 3;
   cuotasOpciones: number[] = [1, 3, 6, 9, 12, 18];
-  inflacion: number = 2.78;
+  inflacion: number = 1.5;
   otraCuota: string = '';
 
   resultado: boolean = false;
