@@ -1,8 +1,4 @@
 <div class="articulo-container">
-  <div class="meta-info">
-    <span>📅 Publicado: Junio 05, 2025</span> • <span>7 min read</span>
-  </div>
-
   <h1 class="titulo-post">Diccionario <span class="bold">FINANCIERO</span></h1>
   <p class="subtitulo-post">Todo lo que necesitás saber</p>
 
@@ -18,7 +14,7 @@
     <details class="categoria">
       <summary class="categoria-titulo">
         <ng-container *ngIf="iconosPorCategoria[categoria] as icono">
-          <lucide-icon [name]="icono" class="icon-inline"></lucide-icon>
+          <lucide-icon [name]="icono" [size]="32" class="icon-inline"></lucide-icon>
         </ng-container>
         {{ categoria }}
         <svg

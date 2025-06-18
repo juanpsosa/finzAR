@@ -15,6 +15,7 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { DiccionarioFinancieroComponent } from './educacion/diccionario-financiero/diccionario-financiero.component';
 import { PlanillaGastosComponent } from './herramientas/planilla-gastos/planilla-gastos.component';
 import { OrdenFinancieroComponent } from './educacion/orden-financiero/orden-financiero.component';
+import { DeudaComponent } from './educacion/deuda/deuda.component';
 
 // ✅ Lucide Angular
 import {
@@ -121,6 +122,7 @@ import {
     DiccionarioFinancieroComponent,
     PlanillaGastosComponent,
     OrdenFinancieroComponent,
+    DeudaComponent,
   ],
   imports: [
     BrowserModule,

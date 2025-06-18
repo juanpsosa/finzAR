@@ -10,7 +10,7 @@ import { DiccionarioFinancieroComponent } from './educacion/diccionario-financie
 import { CalculadoraCuotasComponent } from './herramientas/calculadora-cuotas/calculadora-cuotas.component';
 import { PlanillaGastosComponent } from './herramientas/planilla-gastos/planilla-gastos.component';
 import { OrdenFinancieroComponent } from './educacion/orden-financiero/orden-financiero.component';
-
+import { DeudaComponent } from './educacion/deuda/deuda.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -19,6 +19,7 @@ const routes: Routes = [
   { path: 'educacion/tarjeta-de-credito', component: TarjetaDeCreditoComponent },
   { path: 'educacion/diccionario-financiero', component: DiccionarioFinancieroComponent},
   { path: 'educacion/orden-financiero', component: OrdenFinancieroComponent},
+  { path: 'educacion/deuda', component: DeudaComponent},
 
 
   { path: 'herramientas', component: HerramientasComponent },
